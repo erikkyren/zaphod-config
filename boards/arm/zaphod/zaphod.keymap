@@ -167,7 +167,7 @@ macros {
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
-                =  <&macro_tap &kp U &kp N>;
+                =  <&macro_tap &kp R=U &kp N>;
             };
 
             aposre: aposre {
@@ -383,7 +383,7 @@ behaviors {
                 label = "TAP_DANCE_M";
                 #binding-cells = <0>;
                 tapping-term-ms = <160>;
-                bindings = <&kp m>, <&aposm>;
+                bindings = <&kp M>, <&aposm>;
 	};
 
 
