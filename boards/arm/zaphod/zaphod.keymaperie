@@ -21,7 +21,7 @@
 #define ONE 1
 #define TWO 2
 #define THREE 3
-
+#define FOUR 4
 
 
 
@@ -58,36 +58,12 @@ macros {
                 =  <&macro_tap &kp T &kp H &kp E>;
             };
 
-            ch: ch {
-                label = "ch";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp C &kp H>;
-            };
-
             id: id {
                 label = "id";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
                 =  <&macro_tap &kp I &kp APOS &kp D>;
-            };
-             
-            im: im {
-                label = "im";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp I &kp APOS &kp M>;
-            };
-             
-            in: in {
-                label = "in";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp I &kp N>;
             };
              
             nt: nt {
@@ -104,30 +80,6 @@ macros {
                 #binding-cells = <0>;
                 bindings
                 =  <&macro_tap &kp O &kp F>;
-            };
-
-            on: on {
-                label = "on";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp O &kp N>;
-            };
-             
-            ou: ou {
-                label = "ou";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp O &kp U>;
-            };
-             
-            ty: ty {
-                label = "ty";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp T &kp Y>;
             };
              
             ve: ve {
@@ -160,14 +112,6 @@ macros {
                 #binding-cells = <0>;
                 bindings
                 =  <&macro_tap &kp R &kp E>;
-            };
-
-            un: un {
-                label = "un";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp U &kp N>;
             };
 
             aposre: aposre {
@@ -428,7 +372,7 @@ keymap {
             label = "greasygoose";
 			bindings = <
 				&kp N1	 	&kp N2	    	&kp N3		&kp N4		&kp N5    	&kp N6    	&kp N7    	&kp N8		&kp N9		&kp N0		
-				&td_s	    	&kp O		&lt 1 A		&lt 1 N		&td_dot		&kp APOS	&lt 2 E	   	&lt 1 T		&lt 3 I		&kp Y
+				&td_s	    	&lt 1 O		&lt 1 A		&lt 1 N		&td_dot		&kp APOS	&lt 2 E	   	&lt 1 T		&lt 2 I		&lt 4 Y
 				&kp LCTRL    	&mt LGUI Z	&mt LALT J	&kp G		&none	  	&none		&kp Q 		&mt RALT K	&kp RGUI	&kp RCTRL
 										&kp N0		&kp N0		&kp N0		&kp N0
 			>;
@@ -438,7 +382,7 @@ keymap {
             label = "poopygoose";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&none		&and		&none		&none		&the	   	&nt		&none		&none	
+				&none		&none		&of		&and		&none		&none		&the	   	&nt		&none		&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&none		&none
 			>;
@@ -448,7 +392,7 @@ keymap {
             label = "dustygoose";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&none		&none		&none		&none		&td_re	   	&none		&er		&none	
+				&none		&none		&none		&id		&none		&none		&td_re	   	&none		&er		&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&none		&none
 			>;
@@ -463,6 +407,18 @@ keymap {
 										&none		&none		&none		&none
 			>;
 		};
+
+        four {
+            label = "grubbygoose";
+			bindings = <
+				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
+				&none		&none		&none		&none		&none		&none		&wh	   	&none		&none		&none	
+				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
+										&none		&none		&none		&none
+			>;
+		};
+
+
 
 	};
 };
