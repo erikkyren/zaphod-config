@@ -306,6 +306,12 @@ combos {
                 bindings = <&td_m>;
             };
 
+	bspc_combo {
+                timeout-ms = <60>;
+                key-positions = <10 11 12 13>;
+                bindings = <&kp BSPC>;
+            };
+
 
 ///RIGHT HAND HOMEROW CHORDS HCPRUW
 
@@ -421,10 +427,9 @@ keymap {
         default {
             label = "greasygoose";
 			bindings = <
-				&kp LCTRL    	&mt LGUI Z	&mt LALT J	&kp G		&kp APOS   	&kp N0		&kp Q 		&mt RALT K	&kp RGUI	&kp RCTRL	
-				&td_s	    	&kp O		&lt 1 A		&lt 1 N		&kp SPACE	&kp BSPC	&lt 2 E	   	&lt 1 T		&kp I		&kp Y
-				&kp N1	 	&kp N2	    	&kp N3		&kp N4		&kp N5    	&kp N6    	&kp N7    	&kp N8		&kp N9		&kp N0
-				
+				&kp N1	 	&kp N2	    	&kp N3		&kp N4		&kp N5    	&kp N6    	&kp N7    	&kp N8		&kp N9		&kp N0		
+				&td_s	    	&kp O		&lt 1 A		&lt 1 N		&td_dot		&kp APOS	&lt 2 E	   	&lt 1 T		&lt 3 I		&kp Y
+				&kp LCTRL    	&mt LGUI Z	&mt LALT J	&kp G		&none	  	&none		&kp Q 		&mt RALT K	&kp RGUI	&kp RCTRL
 										&kp N0		&kp N0		&kp N0		&kp N0
 			>;
 		};
