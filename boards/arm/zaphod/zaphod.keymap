@@ -455,7 +455,7 @@ behaviors {
                 label = "TAP_DANCE_S";
                 #binding-cells = <0>;
                 tapping-term-ms = <160>;
-                bindings = <&kp S>, <&aposs>;
+                bindings = <&aposs>, <&kp S>;
 	};
 
         td_m: tap_dance_m {
