@@ -517,7 +517,7 @@ keymap {
         one {
             label = "poopygoose";
 			bindings = <
-				&none		&kp LBRC	&kp LBRK	&kp LPAR	&none		&none	    	&none		&kp UP		&none		&none	
+				&none		&kp LBRC	&kp LBKT	&kp LPAR	&none		&none	    	&none		&kp UP		&none		&none	
 				&none		&none 		&of		&none		&none		&none		&kp LEFT	&kp DOWN	&kp RIGHT	&mo 7	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&kp RSHFT	&kp RCTRL
@@ -527,7 +527,7 @@ keymap {
         two {
             label = "dustygoose";
 			bindings = <
-				&none		&none		&none		&none		&none		&none	    	&kp RPAR	&kp RBRK	&kp RBRC	&none	
+				&none		&none		&none		&none		&none		&none	    	&kp RPAR	&kp RBKT	&kp RBRC	&none	
 				&none		&none		&none		&and		&none		&none		&none		&none		&none		&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&none		&none
