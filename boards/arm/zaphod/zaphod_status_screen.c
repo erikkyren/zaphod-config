@@ -13,24 +13,24 @@
 #include <zephyr/logging/log.h>
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
-if IS_ENABLED(CONFIG_ZAPHOD_BONGO_CAT)
+#if IS_ENABLED(CONFIG_ZAPHOD_BONGO_CAT)
 #include "zaphod_bongo_cat_widget.h"
 
 static struct zaphod_bongo_cat_widget bongo_widget;
 
-endif
+#endif
 
-if IS_ENABLED(CONFIG_ZMK_WIDGET_BATTERY_STATUS)
+#if IS_ENABLED(CONFIG_ZMK_WIDGET_BATTERY_STATUS)
 static struct zmk_widget_battery_status battery_status_widget;
-endif
+#endif
 
-if IS_ENABLED(CONFIG_ZMK_WIDGET_OUTPUT_STATUS)
+#if IS_ENABLED(CONFIG_ZMK_WIDGET_OUTPUT_STATUS)
 static struct zmk_widget_output_status output_status_widget;
-endif
+#endif
 
-if IS_ENABLED(CONFIG_ZMK_WIDGET_LAYER_STATUS)
+#if IS_ENABLED(CONFIG_ZMK_WIDGET_LAYER_STATUS)
 static struct zmk_widget_layer_status layer_status_widget;
-endif
+#endif
 
 #if IS_ENABLED(CONFIG_ZMK_WIDGET_WPM_STATUS)
 static struct zmk_widget_wpm_status wpm_status_widget;
@@ -40,10 +40,10 @@ lv_style_t global_style;
 
 lv_obj_t *zmk_display_status_screen() {
     lv_obj_t *screen;
-if !IS_ENABLED(CONFIG_ZAPHOD_BONGO_CAT)
+#if !IS_ENABLED(CONFIG_ZAPHOD_BONGO_CAT)
     lv_obj_t *dont_label;
     lv_obj_t *panic_label;
-endif
+#endif
     lv_obj_t *center_frame;
 
     lv_style_init(&global_style);
