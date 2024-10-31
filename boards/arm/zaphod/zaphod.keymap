@@ -39,7 +39,7 @@
 
 / {
 
-//macros {
+macros {
 
             and: and {
                 label = "and";
@@ -152,7 +152,72 @@
                 bindings
                 =  <&macro_tap &kp W &kp H>;
             };
-        };        
+
+
+	copy: copy {
+		label= "copy";
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+		=  <&macro_tap &kp LC(C)>;
+	};
+
+	cut: cut {
+		label= "cut";
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+		=  <&macro_tap &kp LC(X)>;
+	};
+	
+	paste: paste {
+		label= "paste";
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+		=  <&macro_tap &kp LC(V)>;
+	};
+
+
+	homeshft: homeshft {
+		label= "homeshft";
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+		=  <&macro_tap &kp LS(HOME)>;
+	};
+
+	endshft: endshft {
+		label= "closeit";
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+		=  <&macro_tap &kp LS(END)>;
+	};
+
+	closeit: closeit {
+		label= "closeit";
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+		=  <&macro_tap &kp LC(W)>;
+	};
+
+	screen: screen {
+		label= "screen";
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+		=  <&macro_press &kp LGUI &kp RSHFT>
+		, <&macro_tap &kp S>
+		, <&macro_release &kp LGUI &kp RSHFT>;
+	}; 
+ };
+
+
+
+
+
 
 combos {
 	compatible = "zmk,combos";
@@ -163,9 +228,6 @@ combos {
             ///July 2023
 
 ///LEFT HAND HOMEROW CHORDS Y B C U
-
-
-
 
 	v_combo {
                 timeout-ms = <60>;
@@ -243,97 +305,6 @@ combos {
 //           	key-positions = <28 29>;
    //         	bindings = <&endshft>;		
 //	};
-
-
-///BOTH HAND HOMEROW CHORDS F W D L V
-
-
-	//d_combo {
-                timeout-ms = <60>;
-                key-positions = <11 16>;
-                bindings = <&kp D>;
-            };
-
-	//m_combo {
-                timeout-ms = <60>;
-                key-positions = <13 18>;
-                bindings = <&kp M>;
-            };
-
-	//w_combo {
-                timeout-ms = <60>;
-                key-positions = <10 19>;
-                bindings = <&kp W>;
-            };
-
-	//n_combo {
-                timeout-ms = <60>;
-                key-positions = <12 17>;
-                bindings = <&kp N>;
-            };
-
-//COMPUTER COMMANDS
-
-
-
-	copy: copy {
-		label= "copy";
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings
-		=  <&macro_tap &kp LC(C)>;
-	};
-
-	cut: cut {
-		label= "cut";
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings
-		=  <&macro_tap &kp LC(X)>;
-	};
-	
-	paste: paste {
-		label= "paste";
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings
-		=  <&macro_tap &kp LC(V)>;
-	};
-
-
-	homeshft: homeshft {
-		label= "homeshft";
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings
-		=  <&macro_tap &kp LS(HOME)>;
-	};
-
-	endshft: endshft {
-		label= "closeit";
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings
-		=  <&macro_tap &kp LS(END)>;
-	};
-
-	closeit: closeit {
-		label= "closeit";
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings
-		=  <&macro_tap &kp LC(W)>;
-	};
-
-	screen: screen {
-		label= "screen";
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings
-		=  <&macro_press &kp LGUI &kp RSHFT>
-		, <&macro_tap &kp S>
-		, <&macro_release &kp LGUI &kp RSHFT>;
-	}; 
 
 };
 
