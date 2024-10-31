@@ -167,7 +167,7 @@ macros {
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
-                =  <&macro_tap &kp R=U &kp N>;
+                =  <&macro_tap &kp U &kp N>;
             };
 
             aposre: aposre {
