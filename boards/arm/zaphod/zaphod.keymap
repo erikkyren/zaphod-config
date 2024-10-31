@@ -422,7 +422,7 @@ keymap {
             label = "greasygoose";
 			bindings = <
 				&kp LCTRL    	&mt LGUI Z	&mt LALT J	&kp G		&kp APOS   	&kp N0		&kp Q 		&mt RALT K	&kp RGUI	&kp RCTRL	
-				&td_s	    	&kp O		&lt 1 A		&lt 1 N		&kp SPACE	&kp BSPC	&lt 2 E	   	&lt 1 T		&td_i		&kp Y
+				&td_s	    	&kp O		&lt 1 A		&lt 1 N		&kp SPACE	&kp BSPC	&lt 2 E	   	&lt 1 T		&kp I		&kp Y
 				&kp N1	 	&kp N2	    	&kp N3		&kp N4		&kp N5    	&kp N6    	&kp N7    	&kp N8		&kp N9		&kp N0
 				
 										&kp N0		&kp N0		&kp N0		&kp N0
