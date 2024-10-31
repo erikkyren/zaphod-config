@@ -22,7 +22,9 @@
 #define TWO 2
 #define THREE 3
 #define FOUR 4
-
+#define FIVE 5
+#define SIX 6
+#define SEVEN 7
 
 
 // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
@@ -57,14 +59,6 @@ macros {
                 bindings
                 =  <&macro_tap &kp T &kp H &kp E>;
             };
-
-            id: id {
-                label = "id";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp I &kp APOS &kp D>;
-            };
              
             nt: nt {
                 label = "nt";
@@ -72,6 +66,14 @@ macros {
                 #binding-cells = <0>;
                 bindings
                 =  <&macro_tap &kp N &kp APOS &kp T>;
+            };
+
+            eh: eh {
+                label = "eh";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp E &kp H>;
             };
              
             of: of {
@@ -114,6 +116,65 @@ macros {
                 =  <&macro_tap &kp R &kp E>;
             };
 
+
+
+
+            there: there {
+                label = "there";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp T &kp H &kp E &kp R &kp E>;
+            };
+
+            their: their {
+                label = "their";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp T &kp H &kp E &kp I &kp R>;
+            };
+
+            they: they {
+                label = "they";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp T &kp H &kp E &kp Y>;
+            };
+
+            then: then {
+                label = "then";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp T &kp H &kp E &kp N>;
+            };
+
+            than: than {
+                label = "than";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp T &kp H &kp A &kp N>;
+            };
+
+            tho: tho {
+                label = "tho";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp T &kp H &kp O>;
+            };
+
+            those: those {
+                label = "those";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp T &kp H &kp O &kp S &kp E>;
+            };
+
             aposre: aposre {
                 label = "aposre";
                 compatible = "zmk,behavior-macro";
@@ -137,6 +198,7 @@ macros {
                 bindings
                 =  <&macro_tap &kp APOS &kp M>;
             };
+
 
 
 	copy: copy {
@@ -250,10 +312,10 @@ combos {
                 bindings = <&td_m>;
             };
 
-	bspc_combo {
+	comma_combo {
                 timeout-ms = <60>;
                 key-positions = <10 11 12 13>;
-                bindings = <&kp BSPC>;
+                bindings = <&kp COMMA>;
             };
 
 
@@ -295,11 +357,78 @@ combos {
                 bindings = <&kp W>;
 	};
 
-	space_combo {
+	period_combo {
                 timeout-ms = <60>;
                 key-positions = <16 17 18 19>;
-                bindings = <&kp SPACE>;
+                bindings = <&kp PERIOD>;
 	};
+
+///CHORDS FOR SYMBOLS
+
+
+
+	dollar_combo {
+                timeout-ms = <60>;
+                key-positions = <1 2>;
+                bindings = <&kp DLLR>;
+            };
+
+	at_combo {
+                timeout-ms = <60>;
+                key-positions = <2 3>;
+                bindings = <&kp AT>;
+            };
+
+	hypen_combo {
+                timeout-ms = <60>;
+                key-positions = <6 7>;
+                bindings = <&kp MINUS>;
+            };
+
+	underscore_combo {
+                timeout-ms = <60>;
+                key-positions = <7 8>;
+                bindings = <&kp UNDER>;
+            };
+
+	plus_combo {
+                timeout-ms = <60>;
+                key-positions = <8 9>;
+                bindings = <&kp PLUS>;
+            };
+
+	bang_combo {
+                timeout-ms = <60>;
+                key-positions = <3 6>;
+                bindings = <&kp EXCL>;
+            };
+
+	quote_combo {
+                timeout-ms = <60>;
+                key-positions = <10 19>;
+                bindings = <&kp DQT>;
+            };
+
+/// CHORDS FOR CONTROL
+
+	backspace_combo {
+                timeout-ms = <60>;
+                key-positions = <15 16>;
+                bindings = <&kp BSPC>;
+            };
+
+	space_combo {
+                timeout-ms = <60>;
+                key-positions = <13 16>;
+                bindings = <&kp SPACE>;
+            };
+
+	enter_combo {
+                timeout-ms = <60>;
+                key-positions = <13 14>;
+                bindings = <&kp ENTER>;
+            };
+
 };
 
 
@@ -311,7 +440,7 @@ behaviors {
             ///July 2023
 
 
-//DOUBLETAP X into !
+// DOUBLETAP X into !
         td_x: tap_dance_x {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_X";
@@ -336,6 +465,13 @@ behaviors {
                 bindings = <&kp M>, <&aposm>;
 	};
 
+        td_q: tap_dance_q {
+                compatible = "zmk,behavior-tap-dance";
+                label = "TAP_DANCE_Q";
+                #binding-cells = <0>;
+                tapping-term-ms = <160>;
+                bindings = <&kp Q>, <&kp QMARK>;
+	};
 
         td_re: tap_dance_re {
                 compatible = "zmk,behavior-tap-dance";
@@ -371,28 +507,28 @@ keymap {
         default {
             label = "greasygoose";
 			bindings = <
-				&kp N1	 	&kp N2	    	&kp N3		&kp N4		&kp N5    	&kp N6    	&kp N7    	&kp N8		&kp N9		&kp N0		
-				&td_s	    	&lt 1 O		&lt 1 A		&lt 1 N		&td_dot		&kp ENTER	&lt 2 E	   	&lt 1 T		&lt 2 I		&lt 4 Y
-				&kp LCTRL    	&mt LGUI Z	&mt LALT J	&kp G		&none	  	&none		&kp Q 		&mt RALT K	&kp RGUI	&kp RCTRL
-										&kp N0		&kp N0		&kp N0		&kp N0
+				&kp N1	 	&lt 2 N2    	&lt 2 N3	&lt 2 N4	&kp N5    	&kp N6    	&lt 1 N7    	&lt 1 N8	&lt 1 N9	&kp N0		
+				&td_s	    	&lt 1 O		&lt 2 A		&lt 3 N		&none		&none		&lt 4 E	   	&lt 5 T		&lt 6 I		&lt 7 Y
+				&kp LCTRL    	&mt LGUI Z	&mt LALT J	&kp G		&none	  	&none		&td_q 		&mt RALT K	&kp RGUI	&kp RCTRL
+										&mo 1		&kp LSHFT	&kp RSHFT	&kp N0
 			>;
 		};
 
         one {
             label = "poopygoose";
 			bindings = <
-				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&of		&and		&none		&none		&the	   	&nt		&none		&none	
+				&none		&kp LBRC	&kp LBRK	&kp LPAR	&none		&none	    	&none		&kp UP		&none		&none	
+				&none		&none 		&of		&none		&none		&none		&kp LEFT	&kp DOWN	&kp RIGHT	&mo 7	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
-										&none		&none		&none		&none
+										&none		&none		&kp RSHFT	&kp RCTRL
 			>;
 		};
 
         two {
             label = "dustygoose";
 			bindings = <
-				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&none		&id		&none		&none		&td_re	   	&none		&er		&none	
+				&none		&none		&none		&none		&none		&none	    	&kp RPAR	&kp RBRK	&kp RBRC	&none	
+				&none		&none		&none		&and		&none		&none		&none		&none		&none		&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&none		&none
 			>;
@@ -402,7 +538,7 @@ keymap {
             label = "muddygoose";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&none		&none		&none		&none		&ve	   	&none		&er		&none	
+				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none		
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&none		&none
 			>;
@@ -412,13 +548,40 @@ keymap {
             label = "grubbygoose";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&none		&none		&none		&none		&wh	   	&none		&none		&none	
+				&none		&none		&none		&none		&none		&none		&none	   	&eh		&er		&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&none		&none
 			>;
 		};
 
+        five {
+            label = "grubbygoose";
+			bindings = <
+				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
+				&those		&tho		&than		&then		&none		&none		&the	   	&none		&td_their	&they	
+				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
+										&none		&none		&none		&none
+			>;
+		};
 
+        six {
+            label = "grubbygoose";
+			bindings = <
+				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
+				&none		&none		&none		&none		&none		&none		&td_re		&none		&none		&none	
+				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
+										&none		&none		&none		&none
+			>;
+		};
 
+        seven {
+            label = "grubbygoose";
+			bindings = <
+				&none		&kp LBRC	&kp LBKT	&kp LPAR	&kp FSLH	&kp BSLH    	&kp RPAR	&kp RBKT	&kp RBRC	&none	
+				&none		&none		&none		&none		&none		&kp BSPC	&kp DEL   	&none		&none		&none	
+				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
+										&none		&none		&none		&none
+			>;
+		};
 	};
 };
