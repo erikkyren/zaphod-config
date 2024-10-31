@@ -279,13 +279,13 @@ combos {
 	f_combo {
                 timeout-ms = <60>;
                 key-positions = <11 12>;
-                bindings = <&kp D>;
+                bindings = <&kp F>;
             };
 
 	d_combo {
                 timeout-ms = <60>;
                 key-positions = <12 13>;
-                bindings = <&kp L>;
+                bindings = <&kp D>;
             };
 
 	l_combo {
@@ -318,13 +318,13 @@ combos {
 	c_combo {
                 timeout-ms = <60>;
                 key-positions = <17 18>;
-                bindings = <&kp U>;
+                bindings = <&kp C>;
 	};
 
 	p_combo {
                 timeout-ms = <60>;
                 key-positions = <18 19>;
-                bindings = <&kp C>;
+                bindings = <&kp P>;
 	};
 
 	r_combo {
