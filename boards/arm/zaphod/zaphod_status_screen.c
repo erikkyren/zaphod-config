@@ -54,25 +54,25 @@ lv_obj_t *zmk_display_status_screen() {
     screen = lv_obj_create(NULL);
     lv_obj_add_style(screen, &global_style, LV_PART_MAIN);
 
-if IS_ENABLED(CONFIG_ZMK_WIDGET_BATTERY_STATUS)
+#if IS_ENABLED(CONFIG_ZMK_WIDGET_BATTERY_STATUS)
     zmk_widget_battery_status_init(&battery_status_widget, screen);
     lv_obj_align(zmk_widget_battery_status_obj(&battery_status_widget), LV_ALIGN_TOP_RIGHT,
                  0, 0);
-endif
+#endif
 
-if IS_ENABLED(CONFIG_ZMK_WIDGET_OUTPUT_STATUS)
+#if IS_ENABLED(CONFIG_ZMK_WIDGET_OUTPUT_STATUS)
     zmk_widget_output_status_init(&output_status_widget, screen);
     lv_obj_align(zmk_widget_output_status_obj(&output_status_widget), LV_ALIGN_TOP_LEFT, 0,
                  0);
-endif
+#endif
 
     center_frame = lv_obj_create(screen);
     lv_obj_align(center_frame, LV_ALIGN_CENTER, 0, 0);
     lv_obj_center(center_frame);
 
-if IS_ENABLED(CONFIG_ZAPHOD_BONGO_CAT)
+#if IS_ENABLED(CONFIG_ZAPHOD_BONGO_CAT)
     zaphod_bongo_cat_widget_init(&bongo_widget, center_frame);
-else
+#else
     dont_label = lv_label_create(center_frame);
     lv_label_set_text(dont_label, "Don't");
 
@@ -81,14 +81,14 @@ else
 
     lv_obj_update_layout(dont_label); // otherwise proper height is not known
     lv_obj_set_y(panic_label, lv_obj_get_height(dont_label));
-endif // IS_ENABLED(CONFIG_ZAPHOD_BONGO_CAT)
+#endif // IS_ENABLED(CONFIG_ZAPHOD_BONGO_CAT)
     lv_obj_set_size(center_frame, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
 
-if IS_ENABLED(CONFIG_ZMK_WIDGET_LAYER_STATUS)
+#if IS_ENABLED(CONFIG_ZMK_WIDGET_LAYER_STATUS)
     zmk_widget_layer_status_init(&layer_status_widget, screen);
     lv_obj_align(zmk_widget_layer_status_obj(&layer_status_widget), LV_ALIGN_BOTTOM_LEFT,
                  0, 0);
-endif
+#endif
 
 #if IS_ENABLED(CONFIG_ZMK_WIDGET_WPM_STATUS)
     zmk_widget_wpm_status_init(&wpm_status_widget, screen);
