@@ -199,6 +199,13 @@ macros {
                 =  <&macro_tap &kp APOS &kp M>;
             };
 
+            apost: apost {
+                label = "apost";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp APOS &kp T>;
+            };
 
 
 	copy: copy {
@@ -411,12 +418,6 @@ combos {
 
 /// CHORDS FOR CONTROL
 
-	backspace_combo {
-                timeout-ms = <60>;
-                key-positions = <15 16>;
-                bindings = <&kp ENTER>;
-            };
-
 	space_combo {
                 timeout-ms = <60>;
                 key-positions = <10 11 12 13>;
@@ -497,15 +498,13 @@ behaviors {
                 bindings = <&their>, <&there>;
 	};
 
-//MOD MORPH MO INTO TAB
-	motab: motab_mod_morph {
-		compatible = "zmk,behavior-mod-morph";
-		label = "MOTAB_MOD_MOPRH";
-		#binding-cells = <0>;
-		bindings = <&mo 11>, <&kp TAB>;
-           	mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL|MOD_LSFT|MOD_RGUI|MOD_RSFT|MOD_RCTL|MOD_RALT)>;
-         	keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL|MOD_LSFT|MOD_RGUI|MOD_RSFT|MOD_RCTL|MOD_RALT)>;
-	};
+        td_mt: tap_dance_mod_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&lt 5 T>, <&apost>;
+        };
+
 
 };
 
@@ -516,7 +515,7 @@ keymap {
             label = "greasygoose";
 			bindings = <
 				&kp N1	 	&lt 2 N2    	&lt 2 N3	&lt 2 N4	&kp N5    	&kp N6    	&lt 1 N7    	&lt 1 N8	&lt 1 N9	&kp N0		
-				&td_s	    	&lt 1 O		&lt 2 A		&lt 3 N		&kp SPC		&kp BSPC	&lt 4 E	   	&lt 5 T		&lt 6 I		&lt 7 Y
+				&td_s	    	&lt 1 O		&lt 2 A		&lt 3 N		&kp SPC		&kp BSPC	&lt 4 E	   	&td_mt		&lt 6 I		&lt 7 Y
 				&kp LCTRL    	&mt LGUI Z	&mt LALT J	&kp G		&none	  	&none		&td_q 		&mt RALT K	&kp RGUI	&kp RCTRL
 										&mo 1		&kp LSHFT	&kp RSHFT	&kp N0
 			>;
@@ -566,7 +565,7 @@ keymap {
             label = "grubbygoose";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&those		&tho		&than		&then		&none		&none		&the	   	&none		&td_their	&they	
+				&those		&tho		&than		&then		&none		&none		&the	   	&none		&their		&they	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&none		&none
 			>;
