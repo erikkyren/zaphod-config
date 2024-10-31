@@ -300,11 +300,11 @@ combos {
                 bindings = <&kp ENTER>;
             };
 
-   //     end_combo {
-  //          	timeout-ms = <235>;
-//           	key-positions = <28 29>;
-   //         	bindings = <&endshft>;		
-//	};
+        bt_combo {
+            	timeout-ms = <235>;
+           	key-positions = <0 9 20 29>;
+            	bindings = <&bt BT_CLR>;		
+	};
 
 };
 
