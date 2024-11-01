@@ -446,7 +446,7 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_X";
                 #binding-cells = <0>;
-                tapping-term-ms = <160>;
+                tapping-term-ms = <260>;
                 bindings = <&kp X>, <&kp EXCL>;
 	};
 
@@ -454,15 +454,15 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_S";
                 #binding-cells = <0>;
-                tapping-term-ms = <160>;
-                bindings = <&aposs>, <&kp S>;
+                tapping-term-ms = <260>;
+                bindings = <&kp S>, <&aposs>;
 	};
 
         td_m: tap_dance_m {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_M";
                 #binding-cells = <0>;
-                tapping-term-ms = <160>;
+                tapping-term-ms = <260>;
                 bindings = <&kp M>, <&aposm>;
 	};
 
@@ -470,7 +470,7 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_Q";
                 #binding-cells = <0>;
-                tapping-term-ms = <160>;
+                tapping-term-ms = <260>;
                 bindings = <&kp Q>, <&kp QMARK>;
 	};
 
@@ -478,7 +478,7 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_re";
                 #binding-cells = <0>;
-                tapping-term-ms = <160>;
+                tapping-term-ms = <260>;
                 bindings = <&re>, <&aposre>;
 	}; 
 
@@ -498,12 +498,6 @@ behaviors {
                 bindings = <&their>, <&there>;
 	};
 
-        td_mt: tap_dance_mod_tap {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&lt 5 T>, <&apost>;
-        };
 
 
 };
@@ -512,17 +506,17 @@ behaviors {
 keymap {
 	compatible = "zmk,keymap";
         default {
-            label = "greasygoose";
+            label = "okay?";
 			bindings = <
 				&kp N1	 	&lt 2 N2    	&lt 2 N3	&lt 2 N4	&kp N5    	&kp N6    	&lt 1 N7    	&lt 1 N8	&lt 1 N9	&kp N0		
-				&td_s	    	&lt 1 O		&lt 2 A		&lt 3 N		&kp SPC		&kp BSPC	&lt 4 E	   	&td_mt		&lt 6 I		&lt 7 Y
+				&td_s	    	&lt 1 O		&lt 2 A		&lt 3 N		&kp SPC		&kp BSPC	&lt 4 E	   	&&lt 5 T	&lt 6 I		&lt 7 Y
 				&kp LCTRL    	&mt LGUI Z	&mt LALT J	&kp G		&none	  	&none		&td_q 		&mt RALT K	&kp RGUI	&kp RCTRL
 										&mo 1		&kp LSHFT	&kp RSHFT	&kp N0
 			>;
 		};
 
         one {
-            label = "poopygoose";
+            label = "one";
 			bindings = <
 				&none		&kp LBRC	&kp LBKT	&kp LPAR	&none		&none	    	&none		&kp UP		&none		&none	
 				&none		&none 		&of		&none		&none		&kp BSPC	&kp LEFT	&kp DOWN	&kp RIGHT	&mo 7	
@@ -532,7 +526,7 @@ keymap {
 		};
 
         two {
-            label = "dustygoose";
+            label = "two";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	    	&kp RPAR	&kp RBKT	&kp RBRC	&none	
 				&none		&none		&none		&and		&none		&none		&none		&none		&none		&none	
@@ -542,17 +536,17 @@ keymap {
 		};
 
         three {
-            label = "muddygoose";
+            label = "three";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none		
+				&none		&none		&none		&none		&none		&none		&none		&nt		&none		&none		
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&none		&none
 			>;
 		};
 
         four {
-            label = "grubbygoose";
+            label = "four";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
 				&none		&none		&none		&none		&none		&none		&none	   	&eh		&er		&none	
@@ -562,7 +556,7 @@ keymap {
 		};
 
         five {
-            label = "grubbygoose";
+            label = "five";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
 				&those		&tho		&than		&then		&none		&none		&the	   	&none		&their		&they	
@@ -572,7 +566,7 @@ keymap {
 		};
 
         six {
-            label = "grubbygoose";
+            label = "six";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
 				&none		&none		&none		&none		&none		&none		&td_re		&none		&none		&none	
@@ -582,7 +576,7 @@ keymap {
 		};
 
         seven {
-            label = "grubbygoose";
+            label = "seven";
 			bindings = <
 				&none		&kp LBRC	&kp LBKT	&kp LPAR	&kp FSLH	&kp BSLH    	&kp RPAR	&kp RBKT	&kp RBRC	&none	
 				&none		&none		&none		&none		&none		&kp DEL		&none   	&none		&none		&none	
