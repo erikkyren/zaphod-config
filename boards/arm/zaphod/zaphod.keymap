@@ -510,7 +510,7 @@ behaviors {
 
 
 };
-zjgqk
+
 
 keymap {
 	compatible = "zmk,keymap";
