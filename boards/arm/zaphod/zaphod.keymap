@@ -232,6 +232,21 @@ macros {
 		=  <&macro_tap &kp LC(V)>;
 	};
 
+	undo: undo {
+		label= "undo";
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+		=  <&macro_tap &kp LC(Z)>;
+	};
+
+	redo: redo {
+		label= "redo";
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+		=  <&macro_tap &kp LC(Y)>;
+	};
 
 	homeshft: homeshft {
 		label= "homeshft";
@@ -320,7 +335,7 @@ combos {
             };
 
 
-///RIGHT HAND HOMEROW CHORDS HCPRUW
+///RIGHT HAND HOMEROW CHORDS HCJRUW
 
 	h_combo {
                 timeout-ms = <60>;
@@ -334,10 +349,10 @@ combos {
                 bindings = <&kp C>;
 	};
 
-	p_combo {
+	j_combo {
                 timeout-ms = <60>;
                 key-positions = <18 19>;
-                bindings = <&kp P>;
+                bindings = <&kp J>;
 	};
 
 	r_combo {
@@ -400,10 +415,10 @@ combos {
                 bindings = <&kp EXCL>;
             };
 
-	period_combo {
+	apos_combo {
                 timeout-ms = <60>;
                 key-positions = <13 16>;
-	                bindings = <&td_dot>;
+	                bindings = <&kp APOS >;
 	};
 
 	quote_combo {
@@ -414,16 +429,10 @@ combos {
 
 /// CHORDS FOR CONTROL
 
-	space_combo {
+	escape_combo {
                 timeout-ms = <60>;
-                key-positions = <10 11 12 13>;
-                bindings = <&kp SPACE>;
-            };
-
-	enter_combo {
-                timeout-ms = <60>;
-                key-positions = <16 17 18 19>;
-                bindings = <&kp ENTER>;
+                key-positions = <0 1>;
+                bindings = <&kp ESCAPE>;
             };
 
 };
@@ -435,6 +444,12 @@ behaviors {
             ///BEHAVIORS
             ///by: Erik Kyren
             ///OCT 2024
+
+        alttab: alt_tab {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&kp GRAVE>;
+            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
 
         td_x: tap_dance_x {
                 compatible = "zmk,behavior-tap-dance";
@@ -480,7 +495,7 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_DOT";
                 #binding-cells = <0>;
-                tapping-term-ms = <160>;
+                tapping-term-ms = <260>;
                 bindings = <&kp PERIOD>, <&kp COMMA>;
 	};
 
@@ -488,44 +503,44 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_THEIR";
                 #binding-cells = <0>;
-                tapping-term-ms = <160>;
+                tapping-term-ms = <260>;
                 bindings = <&their>, <&there>;
 	};
 
 
 
 };
-
+zjgqk
 
 keymap {
 	compatible = "zmk,keymap";
         default {
             label = "okay?";
 			bindings = <
-				&kp N1	 	&lt 2 N2    	&lt 2 N3	&lt 2 N4	&kp N5    	&kp N6    	&lt 1 N7    	&lt 1 N8	&lt 1 N9	&kp N0		
-				&td_s	    	&lt 1 O		&lt 2 A		&lt 3 N		&kp SPC		&kp BSPC	&lt 4 E	   	&lt 5 T		&lt 6 I		&lt 7 Y
-				&kp LCTRL    	&mt LGUI Z	&mt LALT J	&kp G		&none	  	&none		&td_q 		&mt RALT K	&kp RGUI	&kp RCTRL
-										&mo 1		&kp LSHFT	&kp RSHFT	&kp N0
+				&lt 2 N1	&lt 2 N2    	&lt 2 N3	&lt 2 N4	&lt 2 N5    	&lt 1 N6    	&lt 1 N7    	&lt 1 N8	&lt 1 N9	&kp N0		
+				&td_s	    	&lt 3 O		&lt 2 A		&lt 3 N		&kp ENTER	&kp BSPC	&lt 4 E	   	&lt 5 T		&lt 6 I		&lt 7 Y
+				&kp LCTRL   	&mt LALT Z	&mt LGUI C	&td_q		&kp COMMA  	&kp PERIOD	&kp K 		&mt RGUI P	&mt RALT X	&kp RCTRL
+										&mo 1		&kp LSHFT	&kp SPACE	&kp RSHFT
 			>;
 		};
 
         one {
             label = "one";
 			bindings = <
-				&none		&kp LBRC	&kp LBKT	&kp LPAR	&none		&none	    	&none		&kp UP		&none		&none	
-				&none		&none 		&of		&none		&none		&kp BSPC	&kp LEFT	&kp DOWN	&kp RIGHT	&mo 7	
-				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
-										&none		&none		&kp RSHFT	&kp RCTRL
+				&kp LT		&kp LBRC	&kp LBKT	&kp LPAR	&kp BSLH	&none    	&none		&kp UP		&none		&none	
+				&kp LALT	&none 		&none		&kpt TAB	&trans		&kp BSPC	&kp LEFT	&kp DOWN	&kp RIGHT	&mo 7	
+				&none		&redo		&copy		&undo		&none		&none		&none		&paste		&none		&none	
+										&none		&none		&kp SPACE	&kp RSHFT
 			>;
 		};
 
         two {
             label = "two";
 			bindings = <
-				&none		&none		&none		&none		&none		&none	    	&kp RPAR	&kp RBKT	&kp RBRC	&none	
-				&none		&none		&none		&and		&none		&none		&none		&none		&none		&none	
+				&none		&none		&none		&none		&none		&kp FLSH    	&kp RPAR	&kp RBKT	&kp RBRC	&kp GT	
+				&none		&none 		&none		&and		&trans		&trans		&none		&none		&none		&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
-										&none		&none		&none		&none
+										&none		&none		&trans		&none
 			>;
 		};
 
@@ -533,9 +548,9 @@ keymap {
             label = "three";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&none		&none		&none		&none		&none		&nt		&none		&none		
+				&none		&none		&of		&none		&trans		&trans		&none		&nt		&none		&none		
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
-										&none		&none		&none		&none
+										&none		&none		&trans		&none
 			>;
 		};
 
@@ -543,9 +558,9 @@ keymap {
             label = "four";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&none		&none		&none		&none		&none	   	&eh		&er		&none	
+				&none		&none		&none		&none		&trans		&trans		&none	   	&eh		&er		&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
-										&none		&none		&none		&none
+										&none		&none		&trans		&none
 			>;
 		};
 
@@ -553,9 +568,9 @@ keymap {
             label = "five";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&those		&tho		&than		&then		&none		&none		&the	   	&none		&their		&they	
+				&those		&tho		&than		&then		&trans		&trans		&the	   	&none		&td_their	&they	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
-										&none		&none		&none		&none
+										&none		&none		&trans		&none
 			>;
 		};
 
@@ -563,19 +578,19 @@ keymap {
             label = "six";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&none		&none		&none		&none		&td_re		&none		&none		&none	
+				&none		&none		&none		&none		&trans		&trans		&td_re		&none		&none		&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
-										&none		&none		&none		&none
+										&none		&none		&trans		&none
 			>;
 		};
 
         seven {
             label = "seven";
 			bindings = <
-				&none		&kp LBRC	&kp LBKT	&kp LPAR	&kp FSLH	&kp BSLH    	&kp RPAR	&kp RBKT	&kp RBRC	&none	
-				&none		&none		&none		&none		&none		&kp DEL		&none   	&none		&none		&none	
-				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
-										&none		&none		&none		&none
+				&kp LT		&kp LBRC	&kp LBKT	&kp LPAR	&kp BSLH	&kp FSLH    	&kp RPAR	&kp RBKT	&kp RBRC	&kp GT	
+				&kp STAR	&kp CARET	&kp AMPS	&kp PERCENT	&kp EQUAL	&kp DEL		&kp EQUAL   	&kp TILDE	&kp GRAVE	&none	
+				&none		&none		&kp HASH	&none		&kp SEMI	&kp COLON	&none		&kp PIPE	&none		&none	
+										&none		&none		&trans		&none
 			>;
 		};
 	};
