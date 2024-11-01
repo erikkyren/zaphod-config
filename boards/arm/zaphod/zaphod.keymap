@@ -84,28 +84,12 @@ macros {
                 =  <&macro_tap &kp O &kp F>;
             };
              
-            ve: ve {
-                label = "ve";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp APOS &kp V &kp E>;
-            };
-             
             wh: wh {
                 label = "wh";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
                 =  <&macro_tap &kp W &kp H>;
-            };
-
-            er: er {
-                label = "er";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp E &kp R>;
             };
 
             re: re {
@@ -115,16 +99,6 @@ macros {
                 bindings
                 =  <&macro_tap &kp R &kp E>;
             };
-
-            ev: ev {
-                label = "ev";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp E &kp V>;
-            };
-
-
 
             there: there {
                 label = "there";
@@ -337,10 +311,10 @@ combos {
                 bindings = <&kp L>;
             };
 
-	U_combo {
+	v_combo {
                 timeout-ms = <60>;
                 key-positions = <10 13>;
-                bindings = <&kp U>;
+                bindings = <&kp V>;
             };
 
 	m_combo {
@@ -350,7 +324,7 @@ combos {
             };
 
 
-///RIGHT HAND HOMEROW CHORDS HCJRUW
+///RIGHT HAND HOMEROW CHORDS HGJIUW
 
 	h_combo {
                 timeout-ms = <60>;
@@ -358,10 +332,10 @@ combos {
                 bindings = <&kp H>;
 	};
 
-	c_combo {
+	g_combo {
                 timeout-ms = <60>;
                 key-positions = <17 18>;
-                bindings = <&kp C>;
+                bindings = <&kp G>;
 	};
 
 	j_combo {
@@ -370,16 +344,16 @@ combos {
                 bindings = <&kp J>;
 	};
 
-	r_combo {
+	i_combo {
                 timeout-ms = <60>;
                 key-positions = <16 18>;
-                bindings = <&kp R>;
+                bindings = <&kp I>;
 	};
 
-	v_combo {
+	u_combo {
                 timeout-ms = <60>;
                 key-positions = <16 19>;
-                bindings = <&lt 3 V>;
+                bindings = <&lt 3 U>;
 	};
 
 	w_combo {
@@ -519,6 +493,8 @@ behaviors {
 
 
 
+
+
 };
 
 
@@ -527,18 +503,18 @@ keymap {
         default {
             label = "okay?";
 			bindings = <
-				&lt 2 N1	&lt 2 N2    	&lt 2 N3	&lt 2 N4	&lt 2 N5    	&lt 1 N6    	&lt 1 N7    	&lt 1 N8	&lt 1 N9	&kp N0		
-				&td_s	    	&lt 3 O		&lt 2 A		&lt 3 N		&kp ENTER	&kp BSPC	&lt 4 E	   	&lt 5 T		&lt 6 I		&lt 7 Y
-				&kp LCTRL   	&mt LALT Z	&mt LGUI C	&td_q		&kp COMMA  	&kp PERIOD	&kp K 		&mt RGUI P	&mt RALT X	&kp RCTRL
-										&mo 1		&kp LSHFT	&kp SPACE	&kp RSHFT
+				&lt 1 N1	&lt 1 N2    	&lt 1 N3	&lt 1 N4	&lt 1 N5    	&lt 1 N6    	&lt 1 N7    	&lt 1 N8	&lt 1 N9	&kp N0		
+				&td_s	    	&lt 3 O		&lt 2 A		&lt 2 N		&kp ENTER	&kp BSPC	&lt 4 T   	&lt 5 E		&lt 6 R		&lt 7 Y
+				&kp LCTRL   	&mt LALT Z	&mt LGUI C	&td_q		&kp PERIOD  	&kp COMMA	&kp K 		&mt RGUI P	&mt RALT X	&kp RCTRL
+										&mo 1		&sk LSHFT	&kp SPACE	&kp RSHFT
 			>;
 		};
 
         one {
             label = "one";
 			bindings = <
-				&kp LT		&kp LBRC	&kp LBKT	&kp LPAR	&kp BSLH	&none    	&none		&kp UP		&none		&none	
-				&kp LALT	&none 		&none		&kp TAB		&trans		&kp BSPC	&kp LEFT	&kp DOWN	&kp RIGHT	&mo 7	
+				&kp LT		&kp LBRC	&kp LBKT	&kp LPAR	&kp BSLH	&kp FSLH    	&kp RPAR	&kp RBKT	&kp RBRC	&kp GT
+				&kp LALT	&none 		&none		&kp TAB		&trans		&kp DEL		&none		&paste		&none		&none		
 				&none		&redo		&copy		&undo		&none		&none		&none		&paste		&none		&none	
 										&none		&none		&kp SPACE	&kp RSHFT
 			>;
@@ -547,8 +523,8 @@ keymap {
         two {
             label = "two";
 			bindings = <
-				&none		&none		&none		&none		&none		&kp FSLH    	&kp RPAR	&kp RBKT	&kp RBRC	&kp GT	
-				&none		&none 		&none		&and		&trans		&trans		&none		&none		&none		&none	
+				&none		&none		&none		&none		&none		&none		&none		&kp UP		&none		&none	
+				&none		&none 		&none		&and		&trans		&trans		&kp LEFT	&kp DOWN	&kp RIGHT	&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&trans		&none
 			>;
@@ -558,7 +534,7 @@ keymap {
             label = "three";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&of		&none		&trans		&trans		&none		&nt		&none		&none		
+				&none		&none		&of		&none		&trans		&trans		&nt		&none		&none		&none		
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&trans		&none
 			>;
@@ -568,9 +544,9 @@ keymap {
             label = "four";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&none		&none		&trans		&trans		&none	   	&eh		&er		&none	
+				&those		&tho		&than		&then		&trans		&trans		&none	   	&the		&td_their	&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
-										&none		&none		&trans		&none
+										&none		&none		&trans		&none	
 			>;
 		};
 
@@ -578,7 +554,7 @@ keymap {
             label = "five";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&those		&tho		&than		&then		&trans		&trans		&the	   	&none		&td_their	&ev	
+				&none		&none		&none		&none		&trans		&trans		&eh	   	&none		&none		&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&trans		&none
 			>;
@@ -588,7 +564,7 @@ keymap {
             label = "six";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&none		&none		&trans		&trans		&td_re		&none		&none		&none	
+				&none		&none		&none		&none		&trans		&trans		&wh		&td_re		&none		&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&trans		&none
 			>;
@@ -598,7 +574,7 @@ keymap {
             label = "seven";
 			bindings = <
 				&kp LT		&kp LBRC	&kp LBKT	&kp LPAR	&kp BSLH	&kp FSLH    	&kp RPAR	&kp RBKT	&kp RBRC	&kp GT	
-				&kp STAR	&kp CARET	&kp AMPS	&kp PERCENT	&kp EQUAL	&kp DEL		&aposve	   	&kp TILDE	&kp GRAVE	&none	
+				&kp STAR	&kp CARET	&kp AMPS	&kp PERCENT	&kp EQUAL	&kp DEL		&kp TILDE   	&aposve		&kp GRAVE	&none	
 				&none		&none		&kp HASH	&none		&kp SEMI	&kp COLON	&none		&kp PIPE	&none		&none	
 										&none		&none		&trans		&none
 			>;
