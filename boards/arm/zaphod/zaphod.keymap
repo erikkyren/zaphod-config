@@ -84,20 +84,20 @@ macros {
                 =  <&macro_tap &kp O &kp F>;
             };
              
-            wh: wh {
-                label = "wh";
+            it: it {
+                label = "it";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
-                =  <&macro_tap &kp W &kp H>;
+                =  <&macro_tap &kp I &kp T>;
             };
 
-            re: re {
-                label = "re";
+            you: you {
+                label = "tho";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
-                =  <&macro_tap &kp R &kp E>;
+                =  <&macro_tap &kp Y &kp O &kp U>;
             };
 
             there: there {
@@ -194,6 +194,14 @@ macros {
                 #binding-cells = <0>;
                 bindings
                 =  <&macro_tap &kp APOS &kp T>;
+            };
+
+            aposd: aposd {
+                label = "aposd";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp APOS &kp D>;
             };
 
 
@@ -302,7 +310,7 @@ combos {
 	d_combo {
                 timeout-ms = <60>;
                 key-positions = <12 13>;
-                bindings = <&kp D>;
+                bindings = <&td_d>;
             };
 
 	l_combo {
@@ -314,7 +322,7 @@ combos {
 	v_combo {
                 timeout-ms = <60>;
                 key-positions = <10 13>;
-                bindings = <&kp V>;
+                bindings = <&td_v>;
             };
 
 	m_combo {
@@ -459,6 +467,23 @@ behaviors {
                 bindings = <&kp M>, <&aposm>;
 	};
 
+        td_v: tap_dance_v {
+                compatible = "zmk,behavior-tap-dance";
+                label = "TAP_DANCE_V";
+                #binding-cells = <0>;
+                tapping-term-ms = <260>;
+                bindings = <&kp V>, <&aposve>;
+	};
+
+
+        td_d: tap_dance_d {
+                compatible = "zmk,behavior-tap-dance";
+                label = "TAP_DANCE_D";
+                #binding-cells = <0>;
+                tapping-term-ms = <260>;
+                bindings = <&kp D>, <&aposd>;
+	};
+
         td_q: tap_dance_q {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_Q";
@@ -466,14 +491,6 @@ behaviors {
                 tapping-term-ms = <260>;
                 bindings = <&kp Q>, <&kp QMARK>;
 	};
-
-        td_re: tap_dance_re {
-                compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_re";
-                #binding-cells = <0>;
-                tapping-term-ms = <260>;
-                bindings = <&re>, <&aposre>;
-	}; 
 
         td_dot: tap_dance_dot {
                 compatible = "zmk,behavior-tap-dance";
@@ -503,8 +520,8 @@ keymap {
         default {
             label = "okay?";
 			bindings = <
-				&lt 1 N1	&lt 1 N2    	&lt 1 N3	&lt 1 N4	&lt 1 N5    	&lt 1 N6    	&lt 1 N7    	&lt 1 N8	&lt 1 N9	&kp N0		
-				&td_s	    	&lt 3 O		&lt 2 A		&lt 2 N		&kp ENTER	&kp BSPC	&lt 4 T   	&lt 5 E		&lt 6 R		&lt 7 Y
+				&lt 1 N1		&lt 1 N2    &lt 1 N3	&lt 1 N4	&lt 1 N5    	&lt 1 N6    &lt 1 N7    &lt 1 N8	&lt 1 N9	&kp N0		
+				&td_s	    	&lt 3 O		&lt 2 A		&lt 2 N		&kp ENTER		&kp BSPC	&lt 4 T   	&lt 5 E		&lt 6 R		&lt 6 Y
 				&kp LCTRL   	&mt LALT Z	&mt LGUI C	&td_q		&kp PERIOD  	&kp COMMA	&kp K 		&mt RGUI P	&mt RALT X	&kp RCTRL
 										&mo 1		&sk LSHFT	&kp SPACE	&kp RSHFT
 			>;
@@ -513,7 +530,7 @@ keymap {
         one {
             label = "one";
 			bindings = <
-				&kp LT		&kp LBRC	&kp LBKT	&kp LPAR	&kp BSLH	&kp FSLH    	&kp RPAR	&kp RBKT	&kp RBRC	&kp GT
+				&kp LT		&kp LBRC	&kp LBKT	&kp LPAR	&kp BSLH	&kp FSLH    &kp RPAR	&kp RBKT	&kp RBRC	&kp GT
 				&kp LALT	&none 		&none		&kp TAB		&trans		&kp DEL		&none		&paste		&none		&none		
 				&none		&redo		&copy		&undo		&none		&none		&none		&paste		&none		&none	
 										&none		&none		&kp SPACE	&kp RSHFT
@@ -533,8 +550,8 @@ keymap {
         three {
             label = "three";
 			bindings = <
-				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&of		&none		&trans		&trans		&nt		&none		&none		&none		
+				&none		&none		&none		&none		&none		&none	   	&none		&none		&none		&none	
+				&none		&none		&of			&none		&trans		&trans		&nt			&none		&none		&none		
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&trans		&none
 			>;
@@ -543,8 +560,8 @@ keymap {
         four {
             label = "four";
 			bindings = <
-				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&those		&tho		&than		&then		&trans		&trans		&none	   	&the		&td_their	&none	
+				&none		&none		&none		&none		&none		&none	    &none		&none		&none		&none	
+				&those		&tho		&than		&then		&trans		&trans		&none	   	&the		&td_their	&they	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&trans		&none	
 			>;
@@ -553,8 +570,8 @@ keymap {
         five {
             label = "five";
 			bindings = <
-				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&none		&none		&trans		&trans		&eh	   	&none		&none		&none	
+				&none		&none		&none		&none		&none		&none	   	&none		&none		&none		&none	
+				&none		&none		&none		&none		&trans		&trans		&eh		   	&none		&none		&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&trans		&none
 			>;
@@ -563,8 +580,8 @@ keymap {
         six {
             label = "six";
 			bindings = <
-				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&none		&none		&trans		&trans		&wh		&td_re		&none		&none	
+				&none		&none		&none		&none		&none		&none	    &none		&none		&none		&none	
+				&none		&you		&none		&none		&trans		&kp DEL		&it			&aposre		&none		&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&trans		&none
 			>;
@@ -573,8 +590,8 @@ keymap {
         seven {
             label = "seven";
 			bindings = <
-				&kp LT		&kp LBRC	&kp LBKT	&kp LPAR	&kp BSLH	&kp FSLH    	&kp RPAR	&kp RBKT	&kp RBRC	&kp GT	
-				&kp STAR	&kp CARET	&kp AMPS	&kp PERCENT	&kp EQUAL	&kp DEL		&kp TILDE   	&aposve		&kp GRAVE	&none	
+				&kp LT		&kp LBRC	&kp LBKT	&kp LPAR	&kp BSLH	&kp FSLH    &kp RPAR	&kp RBKT	&kp RBRC	&kp GT	
+				&kp STAR	&kp CARET	&kp AMPS	&kp PERCENT	&kp EQUAL	&none		&kp TILDE    &none		&kp GRAVE	&none	
 				&none		&none		&kp HASH	&none		&kp SEMI	&kp COLON	&none		&kp PIPE	&none		&none	
 										&none		&none		&trans		&none
 			>;
