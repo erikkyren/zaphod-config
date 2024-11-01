@@ -2,7 +2,7 @@
  *	QUICKWORD KEYBOARD v3.0
  *	Copyright (c) OCT 2024 Erik Kyren
  *
- *	Note: this is a prototype for QUICKWORD KEYBOARD(c) on ZMK firmware
+ *	Note: this keymap config is a prototype for QUICKWORD KEYBOARD(c) on ZMK firmware
  */
  
  /*
@@ -537,7 +537,7 @@ keymap {
         two {
             label = "two";
 			bindings = <
-				&none		&none		&none		&none		&none		&kp FLSH    	&kp RPAR	&kp RBKT	&kp RBRC	&kp GT	
+				&none		&none		&none		&none		&none		&kp FSLH    	&kp RPAR	&kp RBKT	&kp RBRC	&kp GT	
 				&none		&none 		&none		&and		&trans		&trans		&none		&none		&none		&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&trans		&none
