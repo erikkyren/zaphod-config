@@ -183,6 +183,14 @@ macros {
                 =  <&macro_tap &kp APOS &kp R &kp E>;
             };
 
+            aposve: aposve {
+                label = "aposve";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp APOS &kp V &kp E>;
+            };
+
             aposs: aposs {
                 label = "aposs";
                 compatible = "zmk,behavior-macro";
@@ -523,7 +531,7 @@ keymap {
             label = "one";
 			bindings = <
 				&kp LT		&kp LBRC	&kp LBKT	&kp LPAR	&kp BSLH	&none    	&none		&kp UP		&none		&none	
-				&kp LALT	&none 		&none		&kpt TAB	&trans		&kp BSPC	&kp LEFT	&kp DOWN	&kp RIGHT	&mo 7	
+				&kp LALT	&none 		&none		&kp TAB		&trans		&kp BSPC	&kp LEFT	&kp DOWN	&kp RIGHT	&mo 7	
 				&none		&redo		&copy		&undo		&none		&none		&none		&paste		&none		&none	
 										&none		&none		&kp SPACE	&kp RSHFT
 			>;
@@ -583,7 +591,7 @@ keymap {
             label = "seven";
 			bindings = <
 				&kp LT		&kp LBRC	&kp LBKT	&kp LPAR	&kp BSLH	&kp FSLH    	&kp RPAR	&kp RBKT	&kp RBRC	&kp GT	
-				&kp STAR	&kp CARET	&kp AMPS	&kp PERCENT	&kp EQUAL	&kp DEL		&kp EQUAL   	&kp TILDE	&kp GRAVE	&none	
+				&kp STAR	&kp CARET	&kp AMPS	&kp PERCENT	&kp EQUAL	&kp DEL		&aposve	   	&kp TILDE	&kp GRAVE	&none	
 				&none		&none		&kp HASH	&none		&kp SEMI	&kp COLON	&none		&kp PIPE	&none		&none	
 										&none		&none		&trans		&none
 			>;
