@@ -75,6 +75,14 @@ macros {
                 bindings
                 =  <&macro_tap &kp O &kp F>;
             };
+
+            it: it {
+                label = "it";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp I &kp T>;
+            };      
              
             nd: nd {
                 label = "nd";
