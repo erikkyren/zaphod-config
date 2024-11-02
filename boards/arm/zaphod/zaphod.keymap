@@ -162,13 +162,6 @@ macros {
                 =  <&macro_tap &kp R &kp E>;
             };
 
-            un: un {
-                label = "un";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp R=U &kp N>;
-            };
 
             aposre: aposre {
                 label = "aposre";
