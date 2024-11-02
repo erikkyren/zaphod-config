@@ -2,7 +2,7 @@
  *	QUICKWORD KEYBOARD v3.0
  *	Copyright (c) OCT 2024 Erik Kyren
  *
- *	Note: this is a prototype for QUICKWORD KEYBOARD(c) on ZMK firmware
+ *	Note: this keymap config is a prototype for QUICKWORD KEYBOARD(c) on ZMK firmware
  */
  
  /*
@@ -21,8 +21,10 @@
 #define ONE 1
 #define TWO 2
 #define THREE 3
-
-
+#define FOUR 4
+#define FIVE 5
+#define SIX 6
+#define SEVEN 7
 
 
 // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
@@ -33,7 +35,7 @@
 	retro-tap;
 	};
 
-&mt { 	tapping-term-ms = <125>;
+&mt { 	tapping-term-ms = <185>;
 	retro-tap;};
 
 
@@ -57,38 +59,6 @@ macros {
                 bindings
                 =  <&macro_tap &kp T &kp H &kp E>;
             };
-
-            ch: ch {
-                label = "ch";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp C &kp H>;
-            };
-
-            id: id {
-                label = "id";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp I &kp APOS &kp D>;
-            };
-             
-            im: im {
-                label = "im";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp I &kp APOS &kp M>;
-            };
-             
-            in: in {
-                label = "in";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp I &kp N>;
-            };
              
             nt: nt {
                 label = "nt";
@@ -105,63 +75,78 @@ macros {
                 bindings
                 =  <&macro_tap &kp O &kp F>;
             };
-
-            on: on {
-                label = "on";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp O &kp N>;
-            };
              
-            ou: ou {
-                label = "ou";
+            nd: nd {
+                label = "nd";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
-                =  <&macro_tap &kp O &kp U>;
-            };
-             
-            ty: ty {
-                label = "ty";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp T &kp Y>;
-            };
-             
-            ve: ve {
-                label = "ve";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp APOS &kp V &kp E>;
-            };
-             
-            wh: wh {
-                label = "wh";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp W &kp H>;
+                =  <&macro_tap &kp N &kp D>;
             };
 
-            er: er {
-                label = "er";
+            you: you {
+                label = "tho";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
-                =  <&macro_tap &kp E &kp R>;
+                =  <&macro_tap &kp Y &kp O &kp U>;
             };
 
-            re: re {
-                label = "re";
+            there: there {
+                label = "there";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
-                =  <&macro_tap &kp R &kp E>;
+                =  <&macro_tap &kp T &kp H &kp E &kp R &kp E>;
             };
 
+            their: their {
+                label = "their";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp T &kp H &kp E &kp I &kp R>;
+            };
+
+            they: they {
+                label = "they";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp T &kp H &kp E &kp Y>;
+            };
+
+            then: then {
+                label = "then";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp T &kp H &kp E &kp N>;
+            };
+
+            than: than {
+                label = "than";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp T &kp H &kp A &kp N>;
+            };
+
+            tho: tho {
+                label = "tho";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp T &kp H &kp O>;
+            };
+
+            those: those {
+                label = "those";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp T &kp H &kp O &kp S &kp E>;
+            };
 
             aposre: aposre {
                 label = "aposre";
@@ -169,6 +154,14 @@ macros {
                 #binding-cells = <0>;
                 bindings
                 =  <&macro_tap &kp APOS &kp R &kp E>;
+            };
+
+            aposve: aposve {
+                label = "aposve";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp APOS &kp V &kp E>;
             };
 
             aposs: aposs {
@@ -185,6 +178,22 @@ macros {
                 #binding-cells = <0>;
                 bindings
                 =  <&macro_tap &kp APOS &kp M>;
+            };
+
+            apost: apost {
+                label = "apost";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp APOS &kp T>;
+            };
+
+            aposd: aposd {
+                label = "aposd";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp APOS &kp D>;
             };
 
 
@@ -212,6 +221,21 @@ macros {
 		=  <&macro_tap &kp LC(V)>;
 	};
 
+	undo: undo {
+		label= "undo";
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+		=  <&macro_tap &kp LC(Z)>;
+	};
+
+	redo: redo {
+		label= "redo";
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+		=  <&macro_tap &kp LC(Y)>;
+	};
 
 	homeshft: homeshft {
 		label= "homeshft";
@@ -245,7 +269,20 @@ macros {
 		=  <&macro_press &kp LGUI &kp RSHFT>
 		, <&macro_tap &kp S>
 		, <&macro_release &kp LGUI &kp RSHFT>;
-	}; 
+	};
+	
+	altab: altab {
+		label= "altab";
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+		=  <&macro_press &mo 1 &kp LALT>
+		, <&macro_tap &kp TAB>
+		, <&macro_release &mo 1 &kp LALT>;
+	};
+	
+
+	
  };
 
 
@@ -269,16 +306,16 @@ combos {
                 bindings = <&kp B>;
             };
 
-	f_combo {
-                timeout-ms = <60>;
-                key-positions = <11 12>;
-                bindings = <&kp D>;
-            };
-
 	d_combo {
                 timeout-ms = <60>;
+                key-positions = <11 12>;
+                bindings = <&td_d>;
+            };
+
+	i_combo {
+                timeout-ms = <60>;
                 key-positions = <12 13>;
-                bindings = <&kp L>;
+                bindings = <&kp I>;
             };
 
 	l_combo {
@@ -287,10 +324,10 @@ combos {
                 bindings = <&kp L>;
             };
 
-	U_combo {
+	v_combo {
                 timeout-ms = <60>;
                 key-positions = <10 13>;
-                bindings = <&kp U>;
+                bindings = <&td_v>;
             };
 
 	m_combo {
@@ -300,7 +337,7 @@ combos {
             };
 
 
-///RIGHT HAND HOMEROW CHORDS HCPRUW
+///RIGHT HAND HOMEROW CHORDS HGJIUW
 
 	h_combo {
                 timeout-ms = <60>;
@@ -308,41 +345,111 @@ combos {
                 bindings = <&kp H>;
 	};
 
-	c_combo {
+	f_combo {
                 timeout-ms = <60>;
                 key-positions = <17 18>;
-                bindings = <&kp U>;
+                bindings = <&kp F>;
 	};
 
-	p_combo {
+	j_combo {
                 timeout-ms = <60>;
                 key-positions = <18 19>;
-                bindings = <&kp C>;
+                bindings = <&kp J>;
 	};
 
-	r_combo {
-                timeout-ms = <60>;
+	g_combo {
+                timeout-ms = <85>;
                 key-positions = <16 18>;
-                bindings = <&kp R>;
+                bindings = <&kp G>;
 	};
 
-	v_combo {
-                timeout-ms = <60>;
+	u_combo {
+                timeout-ms = <85>;
                 key-positions = <16 19>;
-                bindings = <&lt 3 V>;
+                bindings = <&lt 3 U>;
 	};
 
 	w_combo {
-                timeout-ms = <60>;
+                timeout-ms = <85>;
                 key-positions = <16 17 18>;
                 bindings = <&kp W>;
 	};
 
-	enter_combo {
+
+///CHORDS FOR SYMBOLS
+
+
+
+
+	dollar_combo {
                 timeout-ms = <60>;
-                key-positions = <16 17 18 19>;
-                bindings = <&kp ENTER>;
+                key-positions = <1 2>;
+                bindings = <&kp DLLR>;
+            };
+
+	at_combo {
+                timeout-ms = <60>;
+                key-positions = <2 3>;
+                bindings = <&kp AT>;
+            };
+
+	hypen_combo {
+                timeout-ms = <60>;
+                key-positions = <6 7>;
+                bindings = <&kp MINUS>;
+            };
+
+	underscore_combo {
+                timeout-ms = <60>;
+                key-positions = <7 8>;
+                bindings = <&kp UNDER>;
+            };
+
+	plus_combo {
+                timeout-ms = <60>;
+                key-positions = <8 9>;
+                bindings = <&kp PLUS>;
+            };
+
+	bang_combo {
+                timeout-ms = <60>;
+                key-positions = <3 6>;
+                bindings = <&kp EXCL>;
+            };
+
+	apos_combo {
+                timeout-ms = <60>;
+                key-positions = <13 16>;
+	                bindings = <&kp APOS >;
 	};
+
+	quote_combo {
+                timeout-ms = <60>;
+                key-positions = <10 19>;
+                bindings = <&kp DQT>;
+            };
+
+/// CHORDS FOR CONTROL
+
+	escape_combo {
+                timeout-ms = <60>;
+                key-positions = <0 1>;
+                bindings = <&gresc>;
+            };
+			
+	thumb_combo {
+                timeout-ms = <60>;
+                key-positions = <30 33>;
+                bindings = <&altab>;
+            };
+			
+	bluteef_combo {
+                timeout-ms = <60>;
+                key-positions = <0 9 20 29>;
+                bindings = <&to 5>;
+            };
+
+
 };
 
 
@@ -351,15 +458,14 @@ behaviors {
 
             ///BEHAVIORS
             ///by: Erik Kyren
-            ///July 2023
+            ///OCT 2024
 
 
-//DOUBLETAP X into !
         td_x: tap_dance_x {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_X";
                 #binding-cells = <0>;
-                tapping-term-ms = <160>;
+                tapping-term-ms = <360>;
                 bindings = <&kp X>, <&kp EXCL>;
 	};
 
@@ -367,7 +473,7 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_S";
                 #binding-cells = <0>;
-                tapping-term-ms = <160>;
+                tapping-term-ms = <360>;
                 bindings = <&kp S>, <&aposs>;
 	};
 
@@ -375,36 +481,105 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_M";
                 #binding-cells = <0>;
-                tapping-term-ms = <160>;
+                tapping-term-ms = <360>;
                 bindings = <&kp M>, <&aposm>;
 	};
 
-
-        td_re: tap_dance_re {
+        td_v: tap_dance_v {
                 compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_re";
+                label = "TAP_DANCE_V";
                 #binding-cells = <0>;
-                tapping-term-ms = <160>;
-                bindings = <&re>, <&aposre>;
-	}; 
+                tapping-term-ms = <360>;
+                bindings = <&kp V>, <&aposve>;
+	};
+
+
+        td_d: tap_dance_d {
+                compatible = "zmk,behavior-tap-dance";
+                label = "TAP_DANCE_D";
+                #binding-cells = <0>;
+                tapping-term-ms = <360>;
+                bindings = <&kp D>, <&aposd>;
+	};
+	
+        td_k: tap_dance_k {
+                compatible = "zmk,behavior-tap-dance";
+                label = "TAP_DANCE_KZ";
+                #binding-cells = <0>;
+                tapping-term-ms = <360>;
+                bindings = <&kp K>, <&kp Z>;
+	};
+
+        td_q: tap_dance_q {
+                compatible = "zmk,behavior-tap-dance";
+                label = "TAP_DANCE_Q";
+                #binding-cells = <0>;
+                tapping-term-ms = <360>;
+                bindings = <&kp Q>, <&kp QMARK>;
+	};
 
         td_dot: tap_dance_dot {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_DOT";
                 #binding-cells = <0>;
-                tapping-term-ms = <160>;
+                tapping-term-ms = <360>;
                 bindings = <&kp PERIOD>, <&kp COMMA>;
 	};
 
-//MOD MORPH MO INTO TAB
-	motab: motab_mod_morph {
-		compatible = "zmk,behavior-mod-morph";
-		label = "MOTAB_MOD_MOPRH";
-		#binding-cells = <0>;
-		bindings = <&mo 11>, <&kp TAB>;
-           	mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL|MOD_LSFT|MOD_RGUI|MOD_RSFT|MOD_RCTL|MOD_RALT)>;
-         	keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL|MOD_LSFT|MOD_RGUI|MOD_RSFT|MOD_RCTL|MOD_RALT)>;
+        td_their: tap_dance_their {
+                compatible = "zmk,behavior-tap-dance";
+                label = "TAP_DANCE_THEIR";
+                #binding-cells = <0>;
+                tapping-term-ms = <360>;
+                bindings = <&their>, <&there>;
 	};
+
+        lft: left_thumb {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LSHFT>, <&kp HOME>;
+            mods = <(MOD_RSFT|MOD_LCTL)>;
+			keep-mods = <(MOD_RSFT)>;
+    };
+		
+		rtt: right_thumb {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RSHFT>, <&kp END>;
+            mods = <(MOD_LSFT|MOD_RCTL)>;
+			keep-mods = <(MOD_LSFT)>;
+    };
+		
+		spct: space_tab {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&kp TAB>;
+            mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_RSFT|MOD_RCTL|MOD_RALT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_RSFT|MOD_RCTL|MOD_RALT)>;
+    };
+	
+	    gresc: grave_escape {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&kp GRAVE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+	
+	    period: period_colon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PERIOD>, <&kp COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+	
+	    comma: comma_semi {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+
 
 };
 
@@ -412,45 +587,84 @@ behaviors {
 keymap {
 	compatible = "zmk,keymap";
         default {
-            label = "greasygoose";
+            label = "y ctrl?";
 			bindings = <
-				&kp LCTRL    	&mt LGUI Z	&mt LALT J	&kp G		&kp APOS   	&kp N0		&kp Q 		&mt RALT K	&kp RGUI	&kp RCTRL	
-				&kp S		&kp N		&kp R		&kp T		&kp ENTER		&kp BSPC 	&kp A		&kp E		&kp O		&kp Y	
-				&kp N1	 	&kp N2	    	&kp N3		&kp N4		&kp N5    	&kp N6    	&kp N7    	&kp N8		&kp N9		&kp N0
-				
-										&kp N0		&kp N0		&kp SPACE	&kp N0
+				&lt 7 N1		&lt 7 N2    &lt 7 N3	&lt 7 N4	&lt 7 N5    	&lt 7 N6    &lt 7 N7    &lt 7 N8	&lt 7 N9	&lt 7 N0		
+				&td_s	    	&lt 3 R		&lt 2 N		&lt 4 T		&kp ENTER		&kp BSPC	&lt 6 A   	&kp E		&lt 3 O		&lt 6 Y
+				&kp LCTRL   	&mt LALT Z	&mt LGUI C	&td_q		&period  		&comma		&kp K 		&mt RGUI P	&mt RALT X	&kp RCTRL
+										&lft		&sk LSHFT	&spct	&rtt
 			>;
 		};
-
+ 
         one {
-            label = "poopygoose";
+            label = "fungus";
 			bindings = <
-				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&none		&and		&none		&none		&the	   	&nt		&none		&none	
-				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
-										&none		&none		&none		&none
+				&kp F1		&kp F2		&kp F3		&kp F4		&kp F5		&kp F6		&kp F7		&kp F8		&kp F9		&kp F10
+				&kp F11		&kp F12		&none		&kp LEFT	&trans		&kp DEL		&kp RIGHT	&none		&none		&none		
+				&none		&none		&redo		&undo		&none		&none		&none		&none		&none		&none	
+										&none		&none		&kp SPACE	&none
 			>;
 		};
 
         two {
-            label = "dustygoose";
+            label = "move";
 			bindings = <
-				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&none		&none		&none		&none		&td_re	   	&none		&er		&none	
+				&none		&none		&none		&none		&none		&none		&none		&kp UP		&none		&none	
+				&none		&nd 		&none		&it			&trans		&trans		&kp LEFT	&kp DOWN	&kp RIGHT	&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
-										&none		&none		&none		&none
+										&none		&none		&trans		&none
 			>;
 		};
 
         three {
-            label = "muddygoose";
+            label = "three";
 			bindings = <
-				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&none		&none		&none		&none		&ve	   	&none		&er		&none	
+				&none		&none		&none		&none		&none		&none	   	&none		&none		&none		&none	
+				&none		&none		&and		&nt			&trans		&trans		&none		&of			&aposre		&none		
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
-										&none		&none		&none		&none
+										&none		&none		&trans		&none
 			>;
 		};
 
+        four {
+            label = "'the'";
+			bindings = <
+				&none		&none		&none		&none		&none		&none	    &none		&none		&none		&none	
+				&those		&none		&then		&none		&trans		&trans		&than	   	&the		&tho		&they	
+				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
+										&none		&none		&trans		&none	
+			>;
+		};
+
+        five {
+            label = "bluteef";
+			bindings = <
+				&none		&none		&kp PG_UP	&kp C_VOL_UP	&none		&none	   	&none		&bt BT_PRV	&none		&none	
+				&none		&none		&kp PG_DN	&kp C_VOL_DN	&trans		&trans		&none	   	&bt BT_NXT	&none		&none	
+				&none		&none		&none		&none			&none		&none		&none		&bt BT_CLR	&none		&none	
+										&none		&none			&trans		&none
+			>;
+		};
+
+        six {
+            label = "six";
+			bindings = <
+				&none		&none		&none		&none		&none		&none	    &none		&none		&none		&none	
+				&none		&none		&none		&none		&trans		&kp DEL		&ha			&he			&you		&none	
+				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
+										&none		&none		&trans		&none
+			>;
+		};
+
+        seven {
+            label = "seven";
+			bindings = <
+				&kp LT		&kp LBRC	&kp LBKT	&kp LPAR	&kp BSLH	&kp FSLH    &kp RPAR	&kp RBKT	&kp RBRC	&kp GT	
+				&none		&none		&none		&kp TILDE	&none		&none		&none		&none		&none		&none		
+				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
+				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
+										&none		&none		&trans		&none
+			>;
+		};
 	};
 };
