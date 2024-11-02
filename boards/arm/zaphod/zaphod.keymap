@@ -332,13 +332,13 @@ combos {
             };
 
 	v_combo {
-                timeout-ms = <60>;
+                timeout-ms = <90>;
                 key-positions = <10 13>;
                 bindings = <&td_v>;
             };
 
 	m_combo {
-                timeout-ms = <60>;
+                timeout-ms = <85>;
                 key-positions = <11 12 13>;
                 bindings = <&td_m>;
             };
@@ -371,13 +371,13 @@ combos {
 	};
 
 	u_combo {
-                timeout-ms = <60>;
+                timeout-ms = <90>;
                 key-positions = <16 19>;
                 bindings = <&lt 3 U>;
 	};
 
 	w_combo {
-                timeout-ms = <60>;
+                timeout-ms = <85>;
                 key-positions = <16 17 18>;
                 bindings = <&kp W>;
 	};
@@ -466,7 +466,7 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_X";
                 #binding-cells = <0>;
-                tapping-term-ms = <260>;
+                tapping-term-ms = <360>;
                 bindings = <&kp X>, <&kp EXCL>;
 	};
 
@@ -474,7 +474,7 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_S";
                 #binding-cells = <0>;
-                tapping-term-ms = <260>;
+                tapping-term-ms = <360>;
                 bindings = <&kp S>, <&aposs>;
 	};
 
@@ -482,7 +482,7 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_M";
                 #binding-cells = <0>;
-                tapping-term-ms = <260>;
+                tapping-term-ms = <360>;
                 bindings = <&kp M>, <&aposm>;
 	};
 
@@ -490,7 +490,7 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_V";
                 #binding-cells = <0>;
-                tapping-term-ms = <260>;
+                tapping-term-ms = <360>;
                 bindings = <&kp V>, <&aposve>;
 	};
 
@@ -499,7 +499,7 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_D";
                 #binding-cells = <0>;
-                tapping-term-ms = <260>;
+                tapping-term-ms = <360>;
                 bindings = <&kp D>, <&aposd>;
 	};
 
@@ -507,7 +507,7 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_Q";
                 #binding-cells = <0>;
-                tapping-term-ms = <260>;
+                tapping-term-ms = <360>;
                 bindings = <&kp Q>, <&kp QMARK>;
 	};
 
@@ -515,7 +515,7 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_DOT";
                 #binding-cells = <0>;
-                tapping-term-ms = <260>;
+                tapping-term-ms = <360>;
                 bindings = <&kp PERIOD>, <&kp COMMA>;
 	};
 
@@ -523,7 +523,7 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_THEIR";
                 #binding-cells = <0>;
-                tapping-term-ms = <260>;
+                tapping-term-ms = <360>;
                 bindings = <&their>, <&there>;
 	};
 
@@ -548,7 +548,7 @@ behaviors {
             #binding-cells = <0>;
             bindings = <&kp SPACE>, <&kp TAB>;
             mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_RSFT|MOD_RCTL|MOD_RALT)>;
-            keep-mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_RSFT|MOD_RCTL|MOD_RALT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_RSFT|MOD_RCTL|MOD_RALT)>;
     };
 	
 	    gresc: grave_escape {
