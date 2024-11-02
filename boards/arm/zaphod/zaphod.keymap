@@ -581,7 +581,7 @@ keymap {
             label = "okay?";
 			bindings = <
 				&lt 1 N1		&lt 7 N2    &lt 7 N3	&lt 7 N4	&lt 7 N5    	&lt 7 N6    &lt 7 N7    &lt 7 N8	&lt 7 N9	&lt 7 N0		
-				&td_s	    	&lt 3 O		&lt 2 A		&lt 2 N		&kp ENTER		&kp BSPC	&lt 4 T   	&lt 5 E		&lt 6 R		&lt 6 Y
+				&td_s	    	&lt 3 O		&lt 2 A		&lt 3 N		&kp ENTER		&kp BSPC	&lt 4 T   	&lt 5 E		&lt 6 R		&lt 6 Y
 				&kp LCTRL   	&mt LALT Z	&mt LGUI C	&td_q		&period  		&comma		&kp K 		&mt RGUI P	&mt RALT X	&kp RCTRL
 										&lft		&sk LSHFT	&spct	&rtt
 			>;
@@ -611,7 +611,7 @@ keymap {
             label = "three";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	   	&none		&none		&none		&none	
-				&none		&none		&of			&none		&trans		&trans		&nt			&none		&none		&none		
+				&none		&none		&of		&none		&trans		&trans		&nt			&none		&none		&none		
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&trans		&none
 			>;
