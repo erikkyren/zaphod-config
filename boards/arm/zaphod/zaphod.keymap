@@ -67,14 +67,6 @@ macros {
                 bindings
                 =  <&macro_tap &kp N &kp APOS &kp T>;
             };
-
-            eh: eh {
-                label = "eh";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp E &kp H>;
-            };
              
             of: of {
                 label = "of";
@@ -503,6 +495,14 @@ behaviors {
                 tapping-term-ms = <360>;
                 bindings = <&kp D>, <&aposd>;
 	};
+	
+        td_k: tap_dance_k {
+                compatible = "zmk,behavior-tap-dance";
+                label = "TAP_DANCE_KZ";
+                #binding-cells = <0>;
+                tapping-term-ms = <360>;
+                bindings = <&kp K>, <&kp Z>;
+	};
 
         td_q: tap_dance_q {
                 compatible = "zmk,behavior-tap-dance";
@@ -581,9 +581,9 @@ behaviors {
 keymap {
 	compatible = "zmk,keymap";
         default {
-            label = "okay?";
+            label = "y ctrl?";
 			bindings = <
-				&lt 1 N1		&lt 7 N2    &lt 7 N3	&lt 7 N4	&lt 7 N5    	&lt 7 N6    &lt 7 N7    &lt 7 N8	&lt 7 N9	&lt 7 N0		
+				&lt 7 N1		&lt 7 N2    &lt 7 N3	&lt 7 N4	&lt 7 N5    	&lt 7 N6    &lt 7 N7    &lt 7 N8	&lt 7 N9	&lt 7 N0		
 				&td_s	    	&lt 3 O		&lt 2 A		&lt 3 N		&kp ENTER		&kp BSPC	&lt 4 T   	&lt 5 E		&lt 3 R		&lt 6 Y
 				&kp LCTRL   	&mt LALT Z	&mt LGUI C	&td_q		&period  		&comma		&kp K 		&mt RGUI P	&mt RALT X	&kp RCTRL
 										&lft		&sk LSHFT	&spct	&rtt
@@ -631,11 +631,11 @@ keymap {
 		};
 
         five {
-            label = "five";
+            label = "bluteef";
 			bindings = <
-				&none		&none		&kp PG_UP	&kp C_VOL_UP	&none		&none	   	&none		&none		&none		&none	
-				&none		&none		&kp PG_DN	&kp C_VOL_DN	&trans		&trans		&eh		   	&none		&none		&none	
-				&none		&none		&none		&none			&none		&none		&none		&none		&none		&none	
+				&none		&none		&kp PG_UP	&kp C_VOL_UP	&none		&none	   	&none		&bt BT_PRV	&none		&none	
+				&none		&none		&kp PG_DN	&kp C_VOL_DN	&trans		&trans		&none	   	&bt BT_NXT	&none		&none	
+				&none		&none		&none		&none			&none		&none		&none		&bt BT_CLR	&none		&none	
 										&none		&none			&trans		&none
 			>;
 		};
