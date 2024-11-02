@@ -44,6 +44,8 @@
 
 macros {
 
+/// BIGRAMS TRIGRAMS WORDS AND SUFFIXES
+
             and: and {
                 label = "and";
                 compatible = "zmk,behavior-macro";
@@ -82,9 +84,9 @@ macros {
                 #binding-cells = <0>;
                 bindings
                 =  <&macro_tap &kp I &kp T>;
-            };      
-             
-            nd: nd {
+            };             
+
+			nd: nd {
                 label = "nd";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
@@ -100,14 +102,13 @@ macros {
                 =  <&macro_tap &kp H &kp A>;
             };             
 
-	he: he {
+			he: he {
                 label = "he";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
                 =  <&macro_tap &kp H &kp E>;
             };
-
 
             you: you {
                 label = "tho";
@@ -205,14 +206,6 @@ macros {
                 =  <&macro_tap &kp APOS &kp M>;
             };
 
-            apost: apost {
-                label = "apost";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp APOS &kp T>;
-            };
-
             aposd: aposd {
                 label = "aposd";
                 compatible = "zmk,behavior-macro";
@@ -221,6 +214,7 @@ macros {
                 =  <&macro_tap &kp APOS &kp D>;
             };
 
+/// USEFUL COMMANDS
 
 	copy: copy {
 		label= "copy";
@@ -303,6 +297,7 @@ macros {
 		bindings
 		=  <&macro_press &mo 1 &kp LALT>
 		, <&macro_tap &kp TAB>
+		, <&macro_pause_for_release>
 		, <&macro_release &mo 1 &kp LALT>;
 	};
 	
