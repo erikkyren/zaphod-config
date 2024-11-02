@@ -285,7 +285,8 @@ macros {
 		#binding-cells = <0>;
 		bindings
 		=  <&macro_press &mo 1 &kp LALT>
-		, <&macro_tap &kp TAB>;
+		, <&macro_tap &kp TAB>
+		, <&macro_release &mo 1 &kp LALT>;
 	};
 	
 
@@ -332,13 +333,13 @@ combos {
             };
 
 	v_combo {
-                timeout-ms = <90>;
+                timeout-ms = <60>;
                 key-positions = <10 13>;
                 bindings = <&td_v>;
             };
 
 	m_combo {
-                timeout-ms = <85>;
+                timeout-ms = <60>;
                 key-positions = <11 12 13>;
                 bindings = <&td_m>;
             };
@@ -371,13 +372,13 @@ combos {
 	};
 
 	u_combo {
-                timeout-ms = <90>;
+                timeout-ms = <60>;
                 key-positions = <16 19>;
                 bindings = <&lt 3 U>;
 	};
 
 	w_combo {
-                timeout-ms = <85>;
+                timeout-ms = <60>;
                 key-positions = <16 17 18>;
                 bindings = <&kp W>;
 	};
@@ -572,6 +573,10 @@ behaviors {
             mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
+    };
+
+
+
 };
 
 
@@ -611,7 +616,7 @@ keymap {
             label = "three";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	   	&none		&none		&none		&none	
-				&none		&none		&of		&none		&trans		&trans		&nt			&none		&none		&none		
+				&none		&none		&of			&none		&trans		&trans		&nt			&none		&none		&none		
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&trans		&none
 			>;
