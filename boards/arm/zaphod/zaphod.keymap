@@ -426,7 +426,7 @@ keymap {
             label = "poopygoose";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	    	&none		&none		&none		&none	
-				&none		&none		&none		&and		&none		&none		&the	   	&nt		none		&none	
+				&none		&none		&none		&and		&none		&none		&the	   	&nt		&none		&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&none		&none
 			>;
