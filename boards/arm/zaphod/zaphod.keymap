@@ -92,6 +92,23 @@ macros {
                 =  <&macro_tap &kp N &kp D>;
             };
 
+            ha: ha {
+                label = "ha";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp H &kp A>;
+            };             
+
+	he: he {
+                label = "he";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp H &kp E>;
+            };
+
+
             you: you {
                 label = "tho";
                 compatible = "zmk,behavior-macro";
