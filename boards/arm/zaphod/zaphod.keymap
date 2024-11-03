@@ -25,7 +25,7 @@
 #define FIVE 5
 #define SIX 6
 #define SEVEN 7
-
+#define EIGHT 8
 
 // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
 
@@ -289,7 +289,15 @@ macros {
 		, <&macro_tap &kp S>
 		, <&macro_release &kp LGUI &kp RSHFT>;
 	};
-	
+
+	selectall: selectall {
+		label= "selectall";
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+		=  <&macro_tap &kp LC(A)>;
+	};
+
 	altab: altab {
 		label= "altab";
 		compatible = "zmk,behavior-macro";
@@ -609,10 +617,14 @@ keymap {
         default {
             label = "y ctrl?";
 			bindings = <
+	///						B			D			I													H			F			J
 				&lt 7 N1		&lt 7 N2    &lt 7 N3	&lt 7 N4	&lt 7 N5    	&lt 7 N6    &lt 7 N7    &lt 7 N8	&lt 7 N9	&lt 7 N0		
 				&td_s	    	&lt 3 R		&lt 2 N		&lt 4 T		&kp ENTER		&kp BSPC	&lt 6 A   	&kp E		&lt 3 O		&lt 6 Y
 				&kp LCTRL   	&mt LALT Z	&mt LGUI C	&td_q		&period  		&comma		&kp K 		&mt RGUI P	&mt RALT X	&kp RCTRL
-										&lft		&sk LSHFT	&spct	&rtt
+	///									L -- M																		G -- W			
+	///									V																			U
+
+													&mo 8		&lft		&spct		&rtt		
 			>;
 		};
  
@@ -621,8 +633,8 @@ keymap {
 			bindings = <
 				&kp F1		&kp F2		&kp F3		&kp F4		&kp F5		&kp F6		&kp F7		&kp F8		&kp F9		&kp F10
 				&kp F11		&kp F12		&none		&kp LEFT	&trans		&kp DEL		&kp RIGHT	&none		&none		&none		
-				&none		&none		&redo		&undo		&none		&none		&none		&none		&none		&none	
-										&none		&none		&kp SPACE	&none
+				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
+										&none		&none		&none		&none
 			>;
 		};
 
@@ -632,7 +644,7 @@ keymap {
 				&none		&none		&none		&none		&none		&none		&none		&kp UP		&none		&none	
 				&none		&nd 		&none		&it			&trans		&trans		&kp LEFT	&kp DOWN	&kp RIGHT	&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
-										&none		&none		&trans		&none
+										&none		&kp LSHFT		&trans		&none
 			>;
 		};
 
@@ -659,11 +671,11 @@ keymap {
         five {
             label = "bluteef";
 			bindings = <
-				&none		&none		&kp PG_UP	&kp C_VOL_UP	&none		&none	   	&none		&bt BT_PRV	&none		&none	
-				&none		&none		&kp PG_DN	&kp C_VOL_DN	&trans		&trans		&none	   	&bt BT_NXT	&none		&none	
-				&none		&none		&none		&none			&none		&none		&none		&bt BT_CLR	&none		&none	
+				&none		&none		&none		&none		&none		&none	   	&none		&bt BT_PRV	&none		&none	
+				&none		&none		&none		&none		&trans		&trans		&none	   	&bt BT_NXT	&none		&none	
+				&none		&none		&none		&none		&noe		&none		&none		&bt BT_CLR	&none		&none	
 										&none		&none			&trans		&none
-			>;
+			>
 		};
 
         six {
@@ -681,9 +693,17 @@ keymap {
 			bindings = <
 				&kp LT		&kp LBRC	&kp LBKT	&kp LPAR	&kp BSLH	&kp FSLH    &kp RPAR	&kp RBKT	&kp RBRC	&kp GT	
 				&none		&none		&none		&kp TILDE	&none		&none		&none		&none		&none		&none		
-				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
-				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
+				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none		
 										&none		&none		&trans		&none
+			>;
+
+        eight {
+            label = "thumb";
+			bindings = <
+				&none		&none		&kp C_VOL_UP	&none		&none		&none		&none		&kp PG_UP		&none		&none		
+				&screen		&none		&kp C_VOL_DN	&none		&none		&closeit	&selectall	&kp PG_DN		&none		&none	
+				&kp HOME	&redo		&copy			&undo		&none		&none		&none		&paste			&cut		&kp END
+										&none			&none		&trans		&none
 			>;
 		};
 	};
