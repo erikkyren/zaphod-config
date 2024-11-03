@@ -615,7 +615,7 @@ keymap {
 			bindings = <
 				&lt 7 N1	&lt 7 N2   	&lt 7 N3	&lt 7 N4	&lt 7 N5    	&lt 7 N6  	&lt 7 N7 	&lt 7 N8	&lt 7 N9	&lt 7 N0		
 		///		&td_s	    	&lt 3 R		&lt 2 N		&lt 4 T		&kp ENTER	&kp BSPC	&lt 6 A   	&kp E		&lt 3 O		&lt 6 Y
-				&kp S		&kp N 		&kp E		&kp A		&kp ENTER	&kp BSPC	&kp T		&kp R		&kp O		&kp Y
+				&kp S		&kp N 		&kp E		&kp T		&kp ENTER	&kp BSPC	&kp A		&kp R		&kp O		&kp Y
 				&kp LCTRL   	&mt LALT Z	&mt LGUI C	&td_q		&period  	&comma		&kp K 		&mt RGUI P	&mt RALT X	&kp RCTRL
 										&mo 8		&lft		&spct		&rtt		
 			>;
