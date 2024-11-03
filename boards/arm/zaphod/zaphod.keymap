@@ -474,7 +474,7 @@ combos {
 	bluteef_combo {
                 timeout-ms = <60>;
                 key-positions = <0 9 20 29>;
-                bindings = <&to 5>;
+                bindings = <&tog 5>;
             };
 };
 
@@ -634,7 +634,7 @@ keymap {
             label = "move";
 			bindings = <
 				&none		&none		&none		&none		&none		&none		&none		&kp UP		&none		&none	
-				&none		&nd 		&none		&it		&trans		&trans		&kp LEFT	&kp DOWN	&kp RIGHT	&none	
+				&none		&none 		&none		&it		&trans		&trans		&kp LEFT	&kp DOWN	&kp RIGHT	&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&kp LSHFT	&trans		&none
 			>;
@@ -644,7 +644,7 @@ keymap {
             label = "three";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	   	&none		&none		&none		&none	
-				&none		&none		&and		&nt		&trans		&trans		&none		&of		&aposre		&none		
+				&none		&and		&nd		&nt		&trans		&trans		&none		&of		&aposre		&none		
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&trans		&none
 			>;
@@ -654,7 +654,7 @@ keymap {
             label = "'the'";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	   	&none		&none		&none		&none	
-				&those		&none		&then		&none		&trans		&trans		&than	   	&the		&tho		&they	
+				&those		&then		&td_their		&none		&trans		&trans		&than	   	&the		&tho		&they	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&trans		&none	
 			>;
