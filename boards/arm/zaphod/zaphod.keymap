@@ -25,7 +25,7 @@
 #define FIVE 5
 #define SIX 6
 #define SEVEN 7
-#define EIGHT 8
+
 
 // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
 
@@ -76,14 +76,6 @@ macros {
                 #binding-cells = <0>;
                 bindings
                 =  <&macro_tap &kp O &kp F>;
-            };
-
-            it: it {
-                label = "it";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp I &kp T>;
             };             
 
 			nd: nd {
@@ -94,28 +86,12 @@ macros {
                 =  <&macro_tap &kp N &kp D>;
             };
 
-            ha: ha {
-                label = "ha";
+            ing: ing {
+                label = "ing";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
-                =  <&macro_tap &kp H &kp A>;
-            };             
-
-			he: he {
-                label = "he";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp H &kp E>;
-            };
-
-            you: you {
-                label = "tho";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp Y &kp O &kp U>;
+                =  <&macro_tap &kp I &kp N &kp G>;
             };
 
             there: there {
@@ -150,12 +126,12 @@ macros {
                 =  <&macro_tap &kp T &kp H &kp E &kp N>;
             };
 
-            than: than {
-                label = "than";
+            tha: tha {
+                label = "tha";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
-                =  <&macro_tap &kp T &kp H &kp A &kp N>;
+                =  <&macro_tap &kp T &kp H &kp A>;
             };
 
             tho: tho {
@@ -164,6 +140,14 @@ macros {
                 #binding-cells = <0>;
                 bindings
                 =  <&macro_tap &kp T &kp H &kp O>;
+            };
+			
+            thi: thi {
+                label = "thi";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp T &kp H &kp I>;
             };
 
             those: those {
@@ -326,13 +310,8 @@ combos {
             ///by: Erik Kyren
             ///OCT 2024  
 
-///LEFT HAND HOMEROW CHORDS BFDLVM
+///LEFT HAND HOMEROW CHORDS - D H L V M
 
-	b_combo {
-                timeout-ms = <60>;
-                key-positions = <10 11>;
-                bindings = <&kp B>;
-            };
 
 	d_combo {
                 timeout-ms = <60>;
@@ -340,10 +319,10 @@ combos {
                 bindings = <&td_d>;
             };
 
-	i_combo {
+	h_combo {
                 timeout-ms = <60>;
                 key-positions = <12 13>;
-                bindings = <&kp I>;
+                bindings = <&kp H>;
             };
 
 	l_combo {
@@ -365,24 +344,18 @@ combos {
             };
 
 
-///RIGHT HAND HOMEROW CHORDS HGJIUW
+///RIGHT HAND HOMEROW CHORDS 
 
-	h_combo {
+	k_combo {
                 timeout-ms = <60>;
                 key-positions = <16 17>;
-                bindings = <&kp H>;
+                bindings = <&kp K>;
 	};
 
 	f_combo {
                 timeout-ms = <60>;
                 key-positions = <17 18>;
                 bindings = <&kp F>;
-	};
-
-	j_combo {
-                timeout-ms = <60>;
-                key-positions = <18 19>;
-                bindings = <&kp J>;
 	};
 
 	g_combo {
@@ -448,7 +421,7 @@ combos {
 	apos_combo {
                 timeout-ms = <60>;
                 key-positions = <13 16>;
-	                bindings = <&kp APOS >;
+	                bindings = <&kp APOS>;
 	};
 
 	quote_combo {
@@ -491,7 +464,7 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_X";
                 #binding-cells = <0>;
-                tapping-term-ms = <360>;
+                tapping-term-ms = <260>;
                 bindings = <&kp X>, <&kp EXCL>;
 	};
 
@@ -499,7 +472,7 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_S";
                 #binding-cells = <0>;
-                tapping-term-ms = <360>;
+                tapping-term-ms = <260>;
                 bindings = <&kp S>, <&aposs>;
 	};
 
@@ -524,7 +497,7 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_D";
                 #binding-cells = <0>;
-                tapping-term-ms = <360>;
+                tapping-term-ms = <260>;
                 bindings = <&kp D>, <&aposd>;
 	};
 	
@@ -614,9 +587,9 @@ keymap {
             label = "y ctrl?";
 			bindings = <
 				&lt 7 N1	&lt 7 N2   	&lt 7 N3	&lt 7 N4	&lt 7 N5    	&lt 7 N6  	&lt 7 N7 	&lt 7 N8	&lt 7 N9	&lt 7 N0		
-				&td_s	    	&lt 3 N		&lt 2 R		&lt 4 T		&kp ENTER	&kp BSPC	&lt 6 A   	&kp E		&lt 3 O		&lt 6 Y
-				&mt LCTRL Z   	&mt LALT X	&mt LGUI C	&td_q		&period  	&comma		&kp K 		&mt RGUI P	&mt RALT DOT	&kp RCTRL
-										&mo 8		&lft		&spct		&rtt		
+				&td_s	    	&lt 3 N		&lt 3 R		&lt 4 T		&kp ENTER	&kp BSPC	&lt 6 A   	&kp E		&lt 3 O		&lt 3 I
+				&kp Z   	&mt LGUI X	&mt LALT C	&mt LCTRL B		&period  	&comma		&mt RCTRL Y		&mt RALT P	&mt RGUI DOT	&kp J
+										&lft		&none		&spct		&rtt		
 			>;
 		};
  
@@ -634,7 +607,7 @@ keymap {
             label = "move";
 			bindings = <
 				&none		&none		&none		&none		&none		&none		&none		&kp UP		&none		&none	
-				&none		&none 		&none		&it		&trans		&trans		&kp LEFT	&kp DOWN	&kp RIGHT	&none	
+				&none		&none 		&none		&none		&trans		&trans		&kp LEFT	&kp DOWN	&kp RIGHT	&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&kp LSHFT	&trans		&none
 			>;
@@ -644,7 +617,7 @@ keymap {
             label = "three";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	   	&none		&none		&none		&none	
-				&none		&none		&nd		&nt		&trans		&trans		&none		&of		&aposre		&none		
+				&none		&ing		&nd		&nt		&trans		&kp BSPC		&none		&of		&aposre		&none		
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&trans		&none
 			>;
@@ -654,7 +627,7 @@ keymap {
             label = "'the'";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	   	&none		&none		&none		&none	
-				&those		&then		&td_their		&none		&trans		&trans		&than	   	&the		&tho		&they	
+				&those		&then		&th		&none		&trans		&trans		&tha	   	&the		&tho		&thi	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&trans		&none	
 			>;
@@ -674,7 +647,7 @@ keymap {
             label = "six";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	   	&none		&none		&none		&none	
-				&none		&and		&none		&none		&trans		&kp DEL		&ha		&he		&you		&none	
+				&none		&and		&none		&none		&trans		&kp DEL		&noen		&none		&none		&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&trans		&none
 			>;
@@ -686,16 +659,6 @@ keymap {
 				&kp LT		&kp LBRC	&kp LBKT	&kp LPAR	&kp BSLH	&kp FSLH  	&kp RPAR	&kp RBKT	&kp RBRC	&kp GT	
 				&none		&none		&none		&kp TILDE	&none		&none		&none		&none		&none		&none		
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none		
-										&none		&none		&trans		&none
-			>;
-		};
-
-        eight {
-            label = "thumb";
-			bindings = <
-				&none		&none		&kp C_VOL_UP	&none		&none		&none		&none		&kp PG_UP		&none		&none		
-				&screen		&none		&kp C_VOL_DN	&none		&none		&closeit	&selectall	&kp PG_DN		&none		&none	
-				&kp HOME	&redo		&copy		&undo		&none		&none		&none		&paste			&cut		&kp END
 										&none		&none		&trans		&none
 			>;
 		};
