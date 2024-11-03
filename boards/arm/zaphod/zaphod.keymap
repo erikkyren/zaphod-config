@@ -476,13 +476,11 @@ combos {
                 key-positions = <0 9 20 29>;
                 bindings = <&to 5>;
             };
-
-
 };
 
 
-behaviors {
 
+behaviors {
 
             ///BEHAVIORS
             ///by: Erik Kyren
@@ -606,10 +604,8 @@ behaviors {
             bindings = <&kp COMMA>, <&kp SEMI>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
     };
-
-
-
 };
+
 
 
 keymap {
@@ -617,14 +613,10 @@ keymap {
         default {
             label = "y ctrl?";
 			bindings = <
-	///						B			D			I													H			F			J
-				&lt 7 N1		&lt 7 N2    &lt 7 N3	&lt 7 N4	&lt 7 N5    	&lt 7 N6    &lt 7 N7    &lt 7 N8	&lt 7 N9	&lt 7 N0		
+				&lt 7 N1		&lt 7 N2   	&lt 7 N3	&lt 7 N4	&lt 7 N5    	&lt 7 N6  	&lt 7 N7    &lt 7 N8	&lt 7 N9	&lt 7 N0		
 				&td_s	    	&lt 3 R		&lt 2 N		&lt 4 T		&kp ENTER		&kp BSPC	&lt 6 A   	&kp E		&lt 3 O		&lt 6 Y
-				&kp LCTRL   	&mt LALT Z	&mt LGUI C	&td_q		&period  		&comma		&kp K 		&mt RGUI P	&mt RALT X	&kp RCTRL
-	///									L -- M																		G -- W			
-	///									V																			U
-
-													&mo 8		&lft		&spct		&rtt		
+				&kp LCTRL   	&mt LALT Z	&mt LGUI C	&td_q		&period  		&comma		&kp K 		&mt RGUI P	&mt RALT X	&kp RCTR
+											&mo 8		&lft		&spct			&rtt		
 			>;
 		};
  
@@ -644,7 +636,7 @@ keymap {
 				&none		&none		&none		&none		&none		&none		&none		&kp UP		&none		&none	
 				&none		&nd 		&none		&it			&trans		&trans		&kp LEFT	&kp DOWN	&kp RIGHT	&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
-										&none		&kp LSHFT		&trans		&none
+										&none		&kp LSHFT	&trans		&none
 			>;
 		};
 
@@ -674,7 +666,7 @@ keymap {
 				&none		&none		&none		&none		&none		&none	   	&none		&bt BT_PRV	&none		&none	
 				&none		&none		&none		&none		&trans		&trans		&none	   	&bt BT_NXT	&none		&none	
 				&none		&none		&none		&none		&noe		&none		&none		&bt BT_CLR	&none		&none	
-										&none		&none			&trans		&none
+										&none		&none		&trans		&none
 			>;
 		};
 
@@ -703,8 +695,9 @@ keymap {
 			bindings = <
 				&none		&none		&kp C_VOL_UP	&none		&none		&none		&none		&kp PG_UP		&none		&none		
 				&screen		&none		&kp C_VOL_DN	&none		&none		&closeit	&selectall	&kp PG_DN		&none		&none	
-				&kp HOME	&redo		&copy		&undo		&none		&none		&none		&paste			&cut		&kp END
-										&none		&none		&trans		&none
+				&kp HOME	&redo		&copy			&undo		&none		&none		&none		&paste			&cut		&kp END
+										&none			&none		&trans		&none
 			>;
 		};
+};
 };
