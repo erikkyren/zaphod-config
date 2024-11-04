@@ -44,6 +44,8 @@
 
 macros {
 
+/// BIGRAMS TRIGRAMS WORDS AND SUFFIXES
+
             and: and {
                 label = "and";
                 compatible = "zmk,behavior-macro";
@@ -58,6 +60,14 @@ macros {
                 #binding-cells = <0>;
                 bindings
                 =  <&macro_tap &kp T &kp H &kp E>;
+            };
+			
+	        th: th {
+                label = "th";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp T &kp H>;
             };
              
             nt: nt {
@@ -74,22 +84,22 @@ macros {
                 #binding-cells = <0>;
                 bindings
                 =  <&macro_tap &kp O &kp F>;
-            };
-             
-            it: it {
-                label = "it";
+            };             
+
+			nd: nd {
+                label = "nd";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
-                =  <&macro_tap &kp I &kp T>;
+                =  <&macro_tap &kp N &kp D>;
             };
 
-            you: you {
-                label = "tho";
+            ing: ing {
+                label = "ing";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
-                =  <&macro_tap &kp Y &kp O &kp U>;
+                =  <&macro_tap &kp I &kp N &kp G>;
             };
 
             there: there {
@@ -124,12 +134,12 @@ macros {
                 =  <&macro_tap &kp T &kp H &kp E &kp N>;
             };
 
-            than: than {
-                label = "than";
+            tha: tha {
+                label = "tha";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
-                =  <&macro_tap &kp T &kp H &kp A &kp N>;
+                =  <&macro_tap &kp T &kp H &kp A>;
             };
 
             tho: tho {
@@ -138,6 +148,14 @@ macros {
                 #binding-cells = <0>;
                 bindings
                 =  <&macro_tap &kp T &kp H &kp O>;
+            };
+			
+            thi: thi {
+                label = "thi";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                =  <&macro_tap &kp T &kp H &kp I>;
             };
 
             those: those {
@@ -180,14 +198,6 @@ macros {
                 =  <&macro_tap &kp APOS &kp M>;
             };
 
-            apost: apost {
-                label = "apost";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                =  <&macro_tap &kp APOS &kp T>;
-            };
-
             aposd: aposd {
                 label = "aposd";
                 compatible = "zmk,behavior-macro";
@@ -196,6 +206,7 @@ macros {
                 =  <&macro_tap &kp APOS &kp D>;
             };
 
+/// USEFUL COMMANDS
 
 	copy: copy {
 		label= "copy";
@@ -270,7 +281,15 @@ macros {
 		, <&macro_tap &kp S>
 		, <&macro_release &kp LGUI &kp RSHFT>;
 	};
-	
+
+	selectall: selectall {
+		label= "selectall";
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+		=  <&macro_tap &kp LC(A)>;
+	};
+
 	altab: altab {
 		label= "altab";
 		compatible = "zmk,behavior-macro";
@@ -278,6 +297,7 @@ macros {
 		bindings
 		=  <&macro_press &mo 1 &kp LALT>
 		, <&macro_tap &kp TAB>
+		, <&macro_pause_for_release>
 		, <&macro_release &mo 1 &kp LALT>;
 	};
 	
@@ -298,24 +318,19 @@ combos {
             ///by: Erik Kyren
             ///OCT 2024  
 
-///LEFT HAND HOMEROW CHORDS BFDLVM
+///LEFT HAND HOMEROW CHORDS - D H L V M
 
-	b_combo {
-                timeout-ms = <60>;
-                key-positions = <10 11>;
-                bindings = <&kp B>;
-            };
-
-	f_combo {
-                timeout-ms = <60>;
-                key-positions = <11 12>;
-                bindings = <&kp F>;
-            };
 
 	d_combo {
                 timeout-ms = <60>;
-                key-positions = <12 13>;
+                key-positions = <11 12>;
                 bindings = <&td_d>;
+            };
+
+	h_combo {
+                timeout-ms = <60>;
+                key-positions = <12 13>;
+                bindings = <&kp H>;
             };
 
 	l_combo {
@@ -337,40 +352,34 @@ combos {
             };
 
 
-///RIGHT HAND HOMEROW CHORDS HGJIUW
+///RIGHT HAND HOMEROW CHORDS 
 
-	h_combo {
+	k_combo {
                 timeout-ms = <60>;
                 key-positions = <16 17>;
-                bindings = <&kp H>;
+                bindings = <&kp K>;
+	};
+
+	f_combo {
+                timeout-ms = <60>;
+                key-positions = <17 18>;
+                bindings = <&kp F>;
 	};
 
 	g_combo {
-                timeout-ms = <60>;
-                key-positions = <17 18>;
+                timeout-ms = <85>;
+                key-positions = <16 18>;
                 bindings = <&kp G>;
 	};
 
-	j_combo {
-                timeout-ms = <60>;
-                key-positions = <18 19>;
-                bindings = <&kp J>;
-	};
-
-	i_combo {
-                timeout-ms = <60>;
-                key-positions = <16 18>;
-                bindings = <&kp I>;
-	};
-
 	u_combo {
-                timeout-ms = <60>;
+                timeout-ms = <85>;
                 key-positions = <16 19>;
                 bindings = <&lt 3 U>;
 	};
 
 	w_combo {
-                timeout-ms = <60>;
+                timeout-ms = <85>;
                 key-positions = <16 17 18>;
                 bindings = <&kp W>;
 	};
@@ -420,7 +429,7 @@ combos {
 	apos_combo {
                 timeout-ms = <60>;
                 key-positions = <13 16>;
-	                bindings = <&kp APOS >;
+	                bindings = <&kp APOS>;
 	};
 
 	quote_combo {
@@ -442,13 +451,17 @@ combos {
                 key-positions = <30 33>;
                 bindings = <&altab>;
             };
-
-
+			
+	bluteef_combo {
+                timeout-ms = <60>;
+                key-positions = <0 9 20 29>;
+                bindings = <&tog 5>;
+            };
 };
 
 
-behaviors {
 
+behaviors {
 
             ///BEHAVIORS
             ///by: Erik Kyren
@@ -459,7 +472,7 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_X";
                 #binding-cells = <0>;
-                tapping-term-ms = <360>;
+                tapping-term-ms = <260>;
                 bindings = <&kp X>, <&kp EXCL>;
 	};
 
@@ -467,7 +480,7 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_S";
                 #binding-cells = <0>;
-                tapping-term-ms = <360>;
+                tapping-term-ms = <260>;
                 bindings = <&kp S>, <&aposs>;
 	};
 
@@ -492,7 +505,7 @@ behaviors {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_D";
                 #binding-cells = <0>;
-                tapping-term-ms = <360>;
+                tapping-term-ms = <260>;
                 bindings = <&kp D>, <&aposd>;
 	};
 	
@@ -572,10 +585,8 @@ behaviors {
             bindings = <&kp COMMA>, <&kp SEMI>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
     };
-
-
-
 };
+
 
 
 keymap {
@@ -583,20 +594,20 @@ keymap {
         default {
             label = "y ctrl?";
 			bindings = <
-				&lt 7 N1		&lt 7 N2    &lt 7 N3	&lt 7 N4	&lt 7 N5    	&lt 7 N6    &lt 7 N7    &lt 7 N8	&lt 7 N9	&lt 7 N0		
-				&td_s	    	&lt 3 R		&lt 2 N		&lt 4 T		&kp ENTER		&kp BSPC	&lt 2 A   	&kp E		&kp O		&lt 6 Y
-				&kp LCTRL   	&mt LALT Z	&mt LGUI C	&td_q		&period  		&comma		&kp K 		&mt RGUI P	&mt RALT X	&kp RCTRL
-										&lft		&sk LSHFT	&spct	&rtt
+				&lt 7 N1	&lt 7 N2   	&lt 7 N3	&lt 7 N4	&lt 7 N5    	&lt 7 N6  	&lt 7 N7 	&lt 7 N8	&lt 7 N9	&lt 7 N0		
+				&td_s	    	&lt 3 N		&lt 3 R		&lt 4 T		&kp ENTER	&kp BSPC	&lt 6 A   	&kp E		&lt 3 O		&lt 3 I
+				&kp Z   	&mt LGUI X	&mt LALT C	&mt LCTRL B		&period  	&comma		&mt RCTRL Y		&mt RALT P	&mt RGUI DOT	&kp J
+										&lft		&none		&spct		&rtt		
 			>;
 		};
-
+ 
         one {
             label = "fungus";
 			bindings = <
 				&kp F1		&kp F2		&kp F3		&kp F4		&kp F5		&kp F6		&kp F7		&kp F8		&kp F9		&kp F10
 				&kp F11		&kp F12		&none		&kp LEFT	&trans		&kp DEL		&kp RIGHT	&none		&none		&none		
-				&none		&none		&redo		&undo		&none		&none		&none		&none		&none		&none	
-										&none		&none		&kp SPACE	&none
+				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
+										&none		&none		&none		&none
 			>;
 		};
 
@@ -604,9 +615,9 @@ keymap {
             label = "move";
 			bindings = <
 				&none		&none		&none		&none		&none		&none		&none		&kp UP		&none		&none	
-				&none		&none 		&and		&nt			&trans		&trans		&kp LEFT	&kp DOWN	&kp RIGHT	&none	
+				&none		&none 		&none		&none		&trans		&trans		&kp LEFT	&kp DOWN	&kp RIGHT	&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
-										&none		&none		&trans		&none
+										&none		&kp LSHFT	&trans		&none
 			>;
 		};
 
@@ -614,17 +625,17 @@ keymap {
             label = "three";
 			bindings = <
 				&none		&none		&none		&none		&none		&none	   	&none		&none		&none		&none	
-				&none		&none		&none		&none		&trans		&trans		&none		&aposre		&none		&none		
+				&none		&ing		&nd		&nt		&trans		&kp BSPC		&none		&of		&aposre		&none		
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&trans		&none
 			>;
 		};
 
         four {
-            label = "four";
+            label = "'the'";
 			bindings = <
-				&none		&none		&none		&none		&none		&none	    &none		&none		&none		&none	
-				&those		&none		&then		&none		&trans		&trans		&than	   	&the		&tho		&they	
+				&none		&none		&none		&none		&none		&none	   	&none		&none		&none		&none	
+				&those		&then		&th		&none		&trans		&trans		&tha	   	&the		&tho		&thi	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&trans		&none	
 			>;
@@ -633,18 +644,18 @@ keymap {
         five {
             label = "bluteef";
 			bindings = <
-				&none		&none		&kp PG_UP	&kp C_VOL_UP	&none		&none	   	&none		&bt BT_PRV	&none		&none	
-				&none		&none		&kp PG_DN	&kp C_VOL_DN	&trans		&trans		&none	   	&bt BT_NXT	&none		&none	
-				&none		&none		&none		&none			&none		&none		&none		&bt BT_CLR	&none		&none	
-										&none		&none			&trans		&none
+				&none		&none		&none		&none		&none		&none	   	&none		&bt BT_PRV	&none		&none	
+				&none		&none		&none		&none		&trans		&trans		&none	   	&bt BT_NXT	&none		&none	
+				&none		&none		&none		&none		&none		&none		&none		&bt BT_CLR	&none		&none	
+										&none		&none		&trans		&none
 			>;
 		};
 
         six {
             label = "six";
 			bindings = <
-				&none		&none		&none		&none		&none		&none	    &none		&none		&none		&none	
-				&none		&none		&none		&none		&trans		&kp DEL		&none		&none		&you		&none	
+				&none		&none		&none		&none		&none		&none	   	&none		&none		&none		&none	
+				&none		&and		&none		&none		&trans		&kp DEL		&none		&none		&none		&none	
 				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
 										&none		&none		&trans		&none
 			>;
@@ -653,12 +664,11 @@ keymap {
         seven {
             label = "seven";
 			bindings = <
-				&kp LT		&kp LBRC	&kp LBKT	&kp LPAR	&kp BSLH	&kp FSLH    &kp RPAR	&kp RBKT	&kp RBRC	&kp GT	
-				&none		&none		&none		&none		&none		&none		&kp TILDE	&none		&none		&none		
-				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
-				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none	
+				&kp LT		&kp LBRC	&kp LBKT	&kp LPAR	&kp BSLH	&kp FSLH  	&kp RPAR	&kp RBKT	&kp RBRC	&kp GT	
+				&none		&none		&none		&kp TILDE	&none		&none		&none		&none		&none		&none		
+				&none		&none		&none		&none		&none		&none		&none		&none		&none		&none		
 										&none		&none		&trans		&none
 			>;
 		};
-	};
+};
 };
